@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --main-color1: #008037;
+    --main-color2: #21496b;
+    --light-green: #c9ead8;
+    --light-blue: #c6ddf1;
+    --black: #444;
+    --white: #fff;
+    --border: .1rem solid var(--main-color1);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+}
+
+* {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--main-color1);
+}
+
+section {
+    padding: 5rem 7%;
+}
+
+.heading {
+    position: relative;
+    color: var(--main-color1);
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading::after {
+    content: url(../images/separator.svg);
+    display: block;
+    width: 10rem;
+    margin-inline: auto;
+    margin-top: -1rem;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background-color: var(--main-color2); 
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: none;
+  }
+  
+  .btn:hover {
+    background-color: var(--main-color1);
+  }
+  
+
+
+/* Header starts here */
+
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+}
+
+.logo {
+    width: 190px;
+    height: auto;
+  }
+  
+.header .navbar a {
+    font-size: 1.7rem;
+    color: var(--black);
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover {
+    color: var(--main-color1);
+}
+
+.header .icons div {
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .icons div:hover {
+    color: var(--main-color1);
+}
+
+#menu-btn {
+    display: none;
+}
+
+.header .login-form {
+    position: absolute;
+    top: 115%; right: -105%;
+    background: var(--white);
+    box-shadow: .5rem;
+    width: 35rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
+
+.header .login-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .login-form h3 {
+    font-size: 2.2rem;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: .7rem;
+    text-transform: none;
+}
+
+.header .login-form .box {
+    font-size: 1.5rem;
+    margin: .7rem 0;
+    border: .1rem solid rgba(0, 0, 0, 1);
+    padding: 1rem 1.2rem;
+    color: var(--black);
+    text-transform: none;
+    width: 100%;
+}
+
+.header .login-form .remember {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: .7rem 0;
+}
+
+.header .login-form .remember label {
+    font-size: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+    text-transform: none;
+}
+
+/* Header ends here */
+
+
+/* Home starts here */
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../images/home.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 50rem;    
+}
+
+.home .content h2 {
+    font-size: 2rem;
+    color: var(--white);
+    text-transform: none;
+    line-height: 1.2;
+}
+
+.home .content h3 {
+    font-size: 5rem;
+    color: var(--white);
+    text-transform: none;
+    line-height: 1.2;
+}
+
+.home .content p {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--white);
+    padding: 1rem 0;
+    text-transform: none;
+}
+
+
+/* Home ends here */
+
+
+/* About starts here */
+
+.about .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about .container .about-image {
+    position: relative;
+    flex: 1 1 40rem;
+}
+
+.about .container .about-image .img1 {
+    width: 100%;
+}
+
+.about .container .about-image .about-img {
+    position: absolute;
+    bottom: -10rem;
+    right: -1rem;
+    width: 25rem;
+    padding-block: 5rem;
+}
+
+.about .container .about-content {
+    flex: 1 1 50rem;
+    padding-left: 6rem;
+    padding-top: 8rem;
+}
+
+.about .container .about-content h3 {
+    font-size: 3rem;
+    color: var(--main-color1);
+    text-transform: none;
+}
+
+.about .container .about-content p {
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem 0;
+    line-height: 1.8;
+    text-transform: none;
+}
+
+/* About ends here */
+
+/* Services starts here */
+
+.services .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.services .box-container .box {
+    padding: 3rem 2rem;
+    text-align: center;
+    border: .1rem solid var(--main-color1);
+    background: var(--light-green);
+}
+
+.services .box-container .box img {
+    height: 10rem;
+    margin-bottom: .7rem;
+}
+
+.services .box-container .box h3 {
+    font-size: 1.7rem;
+    color: var(--black);
+    padding: .5rem 0;
+    text-transform: none;
+}
+
+.services .box-container .box p {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--black);
+    text-transform: none;
+}
+
+/* Services ends here */
+
+/* WhatsApp btn */
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--main-color1);
+    border-radius: 50%;
+    padding: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .whatsapp-button img {
+    width: 32px;
+    height: 32px;
+  }
+    
+  @media (max-width: 600px) {
+    .whatsapp-button {
+      bottom: 15px;
+      right: 15px;
+      padding: 12px;
+    }
+  
+    .whatsapp-button img {
+      width: 28px;
+      height: 28px;
+    }
+  }

@@ -82,7 +82,20 @@ section {
     background-color: var(--main-color1);
   }
   
+.shine::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(to right, transparent 0%, #fff6 100%);
+    transform: skewX(-0.08turn) translateX(-180%);
+}
 
+.shine:is(:hover, :focus-within)::after{
+    transform: skewX(-0.08turn) translateX(275%);
+    transition: 1000ms ease;
+}
 
 /* Header starts here */
 
@@ -300,6 +313,116 @@ section {
 }
 
 /* Services ends here */
+
+/* Courses starts here */
+
+.courses .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.courses .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.courses .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.courses .box-container .box:hover .image img {
+    transform: scale(1.1);
+}
+
+.courses .box-container .box .image h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+    position: absolute;
+    top: 1rem; left: 1rem;
+    padding: .5rem 1.5rem;
+    background: var(--light-green);
+}
+
+.courses .box-container .box .content {
+    padding: 2rem;
+    position: relative;
+    border: 0.1rem solid var(--main-color1);
+}
+
+.courses .box-container .box .content h4 {
+    position: absolute;
+    background: var(--main-color1);
+    color: var(--white);
+    top: 2.5rem; right: 1.5rem;
+    width: 10rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    border-radius: 20px;
+    text-transform: none;
+}
+
+.courses .box-container .box .content p {
+    font-size: 1.4rem;
+    color: var(--black);
+    line-height: 2;
+    text-transform: none;
+}
+
+.courses .box-container .box .content h3 {
+    font-size: 2rem;
+    text-transform: none;
+}
+
+.courses .box-container .box .content .stars {
+    margin-top: 1rem;
+}
+
+.courses .box-container .box .content .stars i {
+    font-size: 1.7rem;
+    color: var(--main-color1);
+}
+
+.courses .box-container .box .content .stars span {
+    font-size: 1.4rem;
+    color: #777;
+    margin-left: .5rem;
+}
+
+.courses .box-container .box .content .icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 0.1rem solid var(--main-color1);
+}
+
+.courses .box-container .box .content .icons span {
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+.courses .box-container .box .content .icons span i {
+    color: var(--main-color1);
+    padding-right: .5rem;
+}
+
+
+/* Courses ends here */
+
+/* Reviews starts here */
+
+
+
+
+/* Reviews ends here */
+
 
 /* WhatsApp btn */
 

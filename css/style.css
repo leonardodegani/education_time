@@ -631,6 +631,73 @@ section {
 
 /* Footer starts here */
 
+.footer {
+    background: var(--light-green);
+    text-align: center;
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--main-color1);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box p {
+    font-size: 1.2rem;
+    color: var(--main-color2);
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .share {
+    margin-top: 1rem;
+}
+
+.footer .box-container .box .share a {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 10%;
+    font-size: 1.7rem;
+    border: .1rem solid var(--main-color2);
+    color: var(--main-color2);
+    margin-right: .3rem;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover {
+    background: var(--main-color2);
+    color: var(--white);
+}
+
+.footer .box-container .box .link {
+    font-size: 1.7rem;
+    line-height: 2;
+    color: var(--black);
+    padding: .5rem 0;
+    display: block;
+    text-transform: lowercase;
+}
+
+.footer .box-container .box .link:hover {
+    color: var(--main-color2);
+    text-decoration: underline;
+}
+
+.footer .credit {
+    font-size: 1rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    text-align: center;
+    color: var(--black);
+    border-top: .1rem solid var(--main-color1);
+}
 
 /* Footer ends here */
 
@@ -660,8 +727,12 @@ section {
     width: 32px;
     height: 32px;
   }
+
+
+  /* Responsive | media queries */
     
   @media (max-width: 600px) {
+
     .whatsapp-button {
       bottom: 15px;
       right: 15px;
@@ -674,3 +745,64 @@ section {
     }
   }
 
+  @media (max-width: 991px) {
+    
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem 4rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 115%;
+        right: -110%;
+        width: 30rem;
+        background: #fff;
+        border-radius: .5rem;
+        z-index: 1000;
+        transition: right 0.3s ease-in-out;
+    }
+
+    .header .navbar.active {
+        right: 2rem;
+    }
+
+    .header .navbar a {
+        display: block;
+        padding: 1.2rem 2rem;
+        font-size: 1.8rem;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .about .container .about-content {
+        padding-left: 0%;
+    }
+}
+
+    @media (max-width: 450px) {
+        html {
+            font-size: 50%;
+        }
+    }

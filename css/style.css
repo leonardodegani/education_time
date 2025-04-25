@@ -259,7 +259,7 @@ section {
 .about .container .about-content {
     flex: 1 1 50rem;
     padding-left: 6rem;
-    padding-top: 8rem;
+    padding-top: 6rem;
 }
 
 .about .container .about-content h3 {
@@ -351,20 +351,24 @@ section {
     padding: 2rem;
     position: relative;
     border: 0.1rem solid var(--main-color1);
+    text-transform: none;
 }
 
-.courses .box-container .box .content h4 {
+.courses .box-container .box .content a {
     position: absolute;
-    background: var(--main-color1);
+    background: var(--main-color2);
     color: var(--white);
     top: 2.5rem; right: 1.5rem;
-    width: 10rem;
+    width: 12rem;
     height: 4rem;
-    line-height: 4rem;
     text-align: center;
     font-size: 1.4rem;
     border-radius: 20px;
     text-transform: none;
+}
+
+.courses .box-container .box .content a:hover {
+    background: var(--main-color1);
 }
 
 .courses .box-container .box .content p {
@@ -373,6 +377,14 @@ section {
     line-height: 2;
     text-transform: none;
 }
+
+.courses .box-container .box .content h5 {
+    font-size: 1.4rem;
+    color: var(--black);
+    line-height: 2;
+    text-transform: none;
+}
+
 
 .courses .box-container .box .content h3 {
     font-size: 2rem;
@@ -406,6 +418,7 @@ section {
 .courses .box-container .box .content .icons span {
     font-size: 1.5rem;
     color: var(--black);
+    text-transform: none;
 }
 
 .courses .box-container .box .content .icons span i {
@@ -415,6 +428,133 @@ section {
 
 
 /* Courses ends here */
+
+/* POP-UP starts here */
+
+.popup {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center;
+    align-items: center;
+  }
+  
+.popup-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .popup-content h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .popup-content p {
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.5;
+    text-transform: initial;
+    text-align: center;
+  }
+
+  .popup-content .icons {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    border-top: 0.1rem solid var(--main-color1);
+  }
+  
+  .popup-content span {
+    font-size: 1.5rem;
+    color: var(--black);
+    text-transform: none;
+  }
+  
+  .popup-content span i {
+    color: var(--main-color1);
+    padding-right: .5rem;
+  }
+
+
+  .popup-content .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .popup-content .details span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    color: #555;
+    text-align: center;
+  }
+  
+  .popup-content .details i {
+    font-size: 1.4rem;
+    color: var(--main-color1);
+    line-height: 1;
+  }
+  
+  .popup-content .btn {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Animação de entrada */
+
+  @keyframes fadeIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Botão de fechar */
+
+  .popup .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .popup .close:hover {
+    color: #ff5050;
+  }
+  
+
+/* POP-UP ends here */
+
 
 /* Reviews starts here */
 

@@ -111,6 +111,8 @@ section {
     padding: 2rem 9%;
 }
 
+
+
 .logo {
     width: 190px;
     height: auto;
@@ -313,6 +315,47 @@ section {
 }
 
 /* Services ends here */
+
+/* Services-user starts here */
+
+.services-user {
+    margin-top: 100px;
+}
+
+.services-user .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    margin-bottom: 20px;
+}
+
+.services-user .box-container .box {
+    padding: 3rem 2rem;
+    text-align: center;
+    border: .1rem solid var(--main-color1);
+    background: var(--light-green);
+}
+
+.services-user .box-container .box img {
+    height: 10rem;
+    margin-bottom: .7rem;
+}
+
+.services-user .box-container .box h3 {
+    font-size: 1.7rem;
+    color: var(--black);
+    padding: .5rem 0;
+    text-transform: none;
+}
+
+.services-user .box-container .box p {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--black);
+    text-transform: none;
+}
+
+/* Services-user ends here */
 
 /* Courses starts here */
 

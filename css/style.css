@@ -199,7 +199,7 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(../images/home.jpg);
+    background: url(../images/home.png);
     background-size: cover;
     background-position: center;
 }
@@ -817,6 +817,7 @@ section {
 .footer {
     background: var(--light-green);
     text-align: center;
+    margin-top: 50px;
 }
 
 .footer .box-container {
@@ -829,6 +830,7 @@ section {
     font-size: 2.2rem;
     color: var(--main-color1);
     padding: 1rem 0;
+    text-transform: none;
 }
 
 .footer .box-container .box p {
@@ -988,4 +990,5 @@ section {
         html {
             font-size: 50%;
         }
+
     }

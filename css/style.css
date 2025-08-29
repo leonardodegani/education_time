@@ -838,6 +838,7 @@ section {
     color: var(--main-color2);
     line-height: 2;
     padding: 1rem 0;
+    text-transform: none;
 }
 
 .footer .box-container .box .share {

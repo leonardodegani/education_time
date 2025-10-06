@@ -190,6 +190,80 @@ section {
     text-transform: none;
 }
 
+/* Language Dropdown (CSS Only) starts here */
+
+/* Contêiner principal do dropdown */
+.language-dropdown {
+  position: relative; /* Essencial para posicionar o menu dropdown */
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+/* O botão (tag <summary>) */
+.language-button {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none; /* Remove a seta/marcador padrão do <summary> */
+}
+
+/* Remove a seta padrão no Chrome/Safari */
+.language-button::-webkit-details-marker {
+  display: none;
+}
+
+.language-button:hover {
+  background: #f0f0f0;
+}
+
+/* Ícone de seta dentro do botão */
+.language-button .fas {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Gira a seta quando o menu está aberto */
+.language-dropdown[open] > .language-button .fas {
+  transform: rotate(180deg);
+}
+
+/* O conteúdo do dropdown */
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  top: 110%; /* Posição logo abaixo do botão */
+  background-color: var(--white);
+  min-width: 120px;
+  box-shadow: var(--box-shadow);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #eee; /* Borda sutil para melhor visualização */
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  color: var(--black);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: var(--main-color1);
+}
+
+/* Language Dropdown ends here */
+
 /* Header ends here */
 
 

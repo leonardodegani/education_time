@@ -308,6 +308,48 @@ section {
 /* Home ends here */
 
 
+/* HomeMalta starts here */
+
+.malta {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../images/homemalta.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.malta .content {
+    max-width: 50rem;
+    padding-bottom: 25rem;    
+}
+
+.malta .content h2 {
+    font-size: 2rem;
+    color: var(--white);
+    text-transform: none;
+    line-height: 1.2;
+}
+
+.malta .content h3 {
+    font-size: 5rem;
+    color: var(--white);
+    text-transform: none;
+    line-height: 1.2;
+}
+
+.malta .content p {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--white);
+    padding: 1rem 0;
+    text-transform: none;
+}
+
+
+/* HomeMalta ends here */
+
+
 /* About starts here */
 
 .about .container {
@@ -322,6 +364,8 @@ section {
 
 .about .container .about-image .img1 {
     width: 100%;
+    height: auto; 
+  object-fit: cover;
 }
 
 .about .container .about-image .about-img {
@@ -571,7 +615,11 @@ section {
     position: relative;
     animation: fadeIn 0.3s ease-in-out;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;       
+    overflow-y: auto;        
+    overscroll-behavior: contain; 
   }
+
 
   .popup-content h2 {
     margin-bottom: 1rem;

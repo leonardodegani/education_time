@@ -304,6 +304,13 @@ section {
     text-transform: none;
 }
 
+p i.fa-star,
+p i.fa-star-half-stroke {
+  color: #f5c518; /* amarelo-dourado */
+  font-size: 1.6rem;
+  margin: 0 2px;
+}
+
 
 /* Home ends here */
 

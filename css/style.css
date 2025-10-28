@@ -7,6 +7,7 @@
     --light-blue: #c6ddf1;
     --black: #444;
     --white: #fff;
+    --green: green;
     --border: .1rem solid var(--main-color1);
     --box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 1);
 }
@@ -593,6 +594,19 @@ p i.fa-star-half-stroke {
     color: var(--main-color1);
     padding-right: .5rem;
 }
+
+/* Novo botão "Quero esse" */
+.courses .box-container .box .content .btn-quero {
+  top: 7rem; /* posiciona logo abaixo do botão "Detalhes" */
+  right: 1.5rem;
+  background: var(--green);
+}
+
+.courses .box-container .box .content .btn-quero:hover {
+  background: var(--green);
+}
+
+
 
 
 /* Courses ends here */

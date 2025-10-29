@@ -955,6 +955,72 @@ p i.fa-star-half-stroke {
 
 /* Blog ends here */
 
+
+/* Lead Form starts here */
+
+.form-section {
+  background: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.form-section h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.form-section p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.btn-form {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-form:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+/* Lead Formas ends here */
+
+
 /* Contact starts here */
 
 

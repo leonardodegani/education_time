@@ -280,6 +280,7 @@
             residências estudantis a apartamentos compartilhados, com conforto e
             localização estratégica.
           </p>
+
         </div>
 
       </div>
@@ -295,9 +296,12 @@
           </div>
           <div class="content">
             <a class="btn" onclick="openPopup('popup1')">Detalhes</a>
+                        <a class="btn btn-quero">Quero esse</a>
             <h3>Pembroke</h3>
             <p><i class="fa-solid fa-bed"></i> Quarto individual</p>
-            <h5>R$1.956.00</h5>
+            <h5><span class="old-price">R$5.200,00</span>
+      <span class="new-price">R$4.680,00</span>
+      <span class="discount">-10%</span></h5>
             <p>Valor por semana</p>
             <div class="icons">
               <span
@@ -315,9 +319,12 @@
           </div>
           <div class="content">
             <a class="btn" onclick="openPopup('popup2')">Detalhes</a>
+                        <a class="btn btn-quero">Quero esse</a>
             <h3>Pembroke</h3>
             <p><i class="fa-solid fa-bed"></i> Quarto duplo</p>
-            <h5>R$2.145,00</h5>
+            <h5><span class="old-price">R$5.200,00</span>
+      <span class="new-price">R$4.680,00</span>
+      <span class="discount">-10%</span></h5>
             <p>Valor por semana</p>
             <div class="icons">
               <span
@@ -335,9 +342,12 @@
           </div>
           <div class="content">
             <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
+                        <a class="btn btn-quero">Quero esse</a>
             <h3>Pembroke</h3>
             <p><i class="fa-solid fa-bed"></i> Studio duplo</p>
-            <h5>R$2.275,00</h5>
+            <h5><span class="old-price">R$5.200,00</span>
+      <span class="new-price">R$4.680,00</span>
+      <span class="discount">-10%</span></h5>
             <p>Valor por semana</p>
             <div class="icons">
               <span
@@ -350,6 +360,23 @@
         </div>
       </div>
     </section>
+
+    
+
+<!-- Botão "Carregar mais" -->
+  <div class="load-more">
+    
+    <button id="loadMoreBtn">
+      <i class="fas fa-plus"></i>
+    </button>
+    <br/><br/><br/><br/>
+          <a class="btn btn-sem-acomodacao" onclick="addAcomodacao('Sem acomodação')">
+  Prosseguir sem acomodação
+</a>
+  </div>
+  
+</section>
+
 
     <!-- Acomodação ends here -->
 
@@ -432,102 +459,78 @@
       </div>
     </div>
 
+
     <!-- Pop Up Acomodação ends here -->
 
     <!-- Transporte starts here -->
 
-    <section class="courses" id="intercambio">
+
+    <section class="services" id="services">
       <h1 class="heading">Transporte</h1>
       <div class="box-container">
         <div class="box">
-          <div class="image shine">
-            <img src="images/turismo-comino.png" alt="" />
-          </div>
-          <div class="content">
-            <a class="btn" onclick="openPopup('popup1')">Saiba mais</a>
-            <h3>Comino Island</h3>
-            <p>O paraíso azul de Malta</p>
-            <br />
-            <h5>Sobre o local:</h5>
-            <p>
-              Comino é uma pequena ilha entre Malta e Gozo, famosa por sua Blue
-              Lagoon, uma das paisagens mais impressionantes do Mediterrâneo.
-            </p>
-            <div class="icons">
-              <p>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <span><i class="fa-solid fa-tags"></i> Descontos exclusivos</span>
-            </div>
-          </div>
+          <img src="images/icone-transporte.png" alt="" />
+          <h3>Escolha o seu transporte</h3>
+          <p>
+            Estude em escolas reconhecidas internacionalmente e escolha o curso
+            ideal para o seu perfil, com opções que equilibram aprendizado,
+            prática e vivência cultural.
+          </p>
         </div>
-
-        <div class="box">
-          <div class="image shine">
-            <img src="images/turismo-popeye.png" alt="" />
-          </div>
-          <div class="content">
-            <a class="btn" onclick="openPopup('popup1')">Saiba mais</a>
-            <h3>Popeye Village</h3>
-            <p>O vilarejo cinematográfico de Malta</p>
-            <br />
-            <h5>Sobre o local:</h5>
-            <p>
-              Construída originalmente como cenário do filme Popeye (1980),
-              estrelado por Robin Williams, a Popeye Village se transformou em
-              uma das atrações turísticas mais divertidas e fotogênicas de
-              Malta.
-            </p>
-            <div class="icons">
-              <p>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <span><i class="fa-solid fa-tags"></i> Descontos exclusivos</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="image shine">
-            <img src="images/turismo-stpeterspool.png" alt="" />
-          </div>
-          <div class="content">
-            <a class="btn" onclick="openPopup('popup1')">Saiba mais</a>
-            <h3>St. Peter's Pool</h3>
-            <p>A piscina natural mais famosa de Malta</p>
-            <br />
-            <h5>Sobre o local:</h5>
-            <p>
-              Localizada perto da vila de pescadores de Marsaxlokk, St. Peter’s
-              Pool é uma impressionante piscina natural formada pelas rochas do
-              litoral maltês.
-            </p>
-            <div class="icons">
-              <p>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <span><i class="fa-solid fa-tags"></i> Descontos exclusivos</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Turismo ends here -->
+    <section class="courses" id="intercambio">
+      <div class="box-container">
+        <div class="box">
+          <div class="image shine">
+            <img src="images/transporte1" alt="" />
+          </div>
+          <div class="content">
+            <a class="btn" onclick="openPopup('popup1')">Saiba mais</a>
+                        <a class="btn btn-quero">Quero esse</a>
+            <h3>Transfer de chegada</h3>
+            <p>Praticidade e comforto</p>
+            <h5><span class="old-price">R$220,00</span>
+      <span class="new-price">R$150,00</span>
+      <span class="discount">-10%</span></h5>
+            <br />
+            <h5>Sobre:</h5>
+            <p>
+              Motorista particular busca você no aeroporto
+            </p>
+            <div class="icons">
+              <p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <span><i class="fa-solid fa-tags"></i> Descontos exclusivos</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
 
-    <!-- Pop Up Turismo starts here -->
+      
+<!-- Botão "Carregar mais" -->
+  <div class="load-more">
+    
+    
+    <br/><br/>
+          <a class="btn btn-sem-acomodacao" onclick="addAcomodacao('Sem acomodação')">
+  Prosseguir sem transporte
+</a>
+  </div>
+
+
+    </section>
+
+
+    <!-- Trasporte ends here -->
+
+    <!-- Pop Up Transporte starts here -->
 
     <div class="popup" id="popup7">
       <div class="popup-content">
@@ -606,7 +609,33 @@
       </div>
     </div>
 
-    <!-- Pop Up Turismo ends here -->
+    <!-- Pop Up Transporte ends here -->
+
+<!-- Lead Form starts here -->
+
+<section class="form-section" id="contato">
+  <h2>Seus dados</h2>
+  <p>Preencha seus dados para prosseguir para seu orçamento.</p>
+
+  <form id="leadForm">
+    <div class="form-group">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+    </div>
+
+    <div class="form-group">
+      <label for="whatsapp">WhatsApp</label>
+      <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 90000-0000" required>
+    </div>
+
+    <button type="submit" class="btn-form">Revisar meu intercâmbio</button>
+  </form>
+</section>
+
+
+<!-- Lead Form ends here -->
+
+
 
     <section class="footer">
       <div class="box-container">

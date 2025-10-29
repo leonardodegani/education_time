@@ -1,3 +1,6 @@
+
+
+
 let navbar = document.querySelector('.header .navbar');
 let loginForm = document.querySelector('.login-form');
 

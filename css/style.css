@@ -440,6 +440,57 @@ p i.fa-star-half-stroke {
     text-transform: none;
 }
 
+.load-more {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#loadMoreBtn {
+  background-color: #003366; /* cor principal */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#loadMoreBtn:hover {
+  background-color: #0055a5;
+  transform: scale(1.1);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 15px;
+}
+
+.new-price {
+  color: var(--main-color1);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.discount {
+  background-color: #ff3b3b;
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+
 /* Services ends here */
 
 /* Services-user starts here */

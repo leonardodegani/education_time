@@ -255,80 +255,174 @@ function formatCurrency(num) {
 
 
 /* ============================================================
-   CART PAGE SCRIPT - renderiza os itens no cart.html
+   CART PAGE SCRIPT - compatível com várias versões de cart.html
+   Substitua/cole no final do seu script.js (substitui blocos antigos)
    ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
-  const cartPage = document.getElementById("cartPage");
-  if (!cartPage) return; // executa apenas se estivermos no cart.html
+  // detecta se estamos na página do carrinho
+  const cartPage = document.getElementById("cartPage") || document.querySelector('body[id="cartPage"]');
+  if (!cartPage) return;
 
-  const cartList = document.getElementById("cartList");
-  const totalPriceEl = document.getElementById("totalPrice");
-  const emptyMessage = document.getElementById("emptyCartMessage");
-  const finalizeBtn = document.getElementById("finalizeBtn");
+  // compatibilidade: possíveis ids usados no HTML
+  const tbodyEl = document.getElementById("cartList") || document.getElementById("cartItems") || document.getElementById("cartListContainer");
+  const tableEl = document.getElementById("cartTable");
+  const cartTotalEl = document.getElementById("cartTotal") || document.getElementById("totalPrice");
+  const emptyEl = document.getElementById("emptyMsg") || document.getElementById("emptyCartMessage");
+  const finalizeBtn = document.getElementById("finalizeBtn") || document.getElementById("finalizeCart");
+  const clearBtn = document.getElementById("clearBtn") || document.getElementById("clearCart");
+  const cartActions = document.getElementById("cartActions");
+  const leadBox = document.getElementById("leadBox") || document.getElementById("leadInfo");
+  const leadName = document.getElementById("leadName");
+  const leadWhatsapp = document.getElementById("leadWhatsapp");
 
-  const cart = getCart();
+  // pega o carrinho
+  const cart = getCart() || [];
   updateCartCount();
 
-  if (cart.length === 0) {
-    emptyMessage.style.display = "block";
-    cartList.style.display = "none";
-    if (finalizeBtn) finalizeBtn.style.display = "none";
+  // mostra dados do lead (se houver)
+  const lead = JSON.parse(localStorage.getItem("lw_lead") || "{}");
+  if (leadBox) {
+    if (lead.nome || lead.whatsapp) {
+      // se leadBox for um container genérico (id leadInfo) coloca conteúdo
+      if (leadBox.id === "leadInfo") {
+        leadBox.style.display = "";
+        leadBox.innerHTML = `<div class="lead-info"><h3>Seus dados</h3>
+          <p>Nome: ${lead.nome || "Não informado"}</p>
+          <p>WhatsApp: ${lead.whatsapp || "Não informado"}</p></div>`;
+      } else {
+        leadBox.style.display = "";
+        if (leadName) leadName.textContent = `Nome: ${lead.nome || "Não informado"}`;
+        if (leadWhatsapp) leadWhatsapp.textContent = `WhatsApp: ${lead.whatsapp || "Não informado"}`;
+      }
+    } else {
+      // se não houver lead, mantém escondido
+      leadBox.style.display = "none";
+    }
+  }
+
+  // se carrinho vazio
+  if (!cart || cart.length === 0) {
+    if (emptyEl) emptyEl.style.display = "";
+    if (tableEl) tableEl.style.display = "none";
+    if (cartTotalEl) cartTotalEl.style.display = "none";
+    if (cartActions) cartActions.style.display = "none";
     return;
   }
 
-  emptyMessage.style.display = "none";
-  cartList.innerHTML = "";
+  // existe itens: exibe tabela, ações e oculta mensagem vazia
+  if (emptyEl) emptyEl.style.display = "none";
+  if (tableEl) tableEl.style.display = "";
+  if (cartTotalEl) cartTotalEl.style.display = "";
+  if (cartActions) cartActions.style.display = "";
 
+  // determina container onde vamos inserir linhas
+  const rowsContainer = document.getElementById("cartItems") || document.getElementById("cartList") || document.getElementById("cartList");
+  if (!rowsContainer) {
+    console.warn("cart page: nenhum container para linhas encontrado (ids esperados: cartItems, cartList).");
+    return;
+  }
+
+  // limpa
+  rowsContainer.innerHTML = "";
+
+  // popula linhas (como tabela)
   let total = 0;
-
-  cart.forEach((item, index) => {
-    const li = document.createElement("li");
-    li.className = "cart-item";
-    li.innerHTML = `
-      <div class="cart-info">
-        <strong>${item.title}</strong><br>
-        <small>${item.type}</small>
-      </div>
-      <div class="cart-actions">
-        <span>${formatCurrency(item.price)}</span>
-        <button class="remove-btn" data-index="${index}">✕</button>
-      </div>
+  cart.forEach((item, idx) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>
+        <strong>${escapeHtml(item.title || "Item")}</strong><br/>
+        <small style="color:#666">${escapeHtml(item.type || "")}</small>
+      </td>
+      <td class="price">${formatCurrency(item.price || 0)}</td>
+      <td style="text-align:center">
+        <button class="remove-btn" data-index="${idx}" title="Remover item">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
     `;
-    cartList.appendChild(li);
-    total += item.price;
+    rowsContainer.appendChild(tr);
+    total += Number(item.price || 0);
   });
 
-  totalPriceEl.textContent = formatCurrency(total);
+  // exibe total (preferindo cartTotalEl se existir)
+  if (cartTotalEl) {
+    cartTotalEl.style.display = "";
+    cartTotalEl.innerHTML = `<strong>Total:</strong> ${formatCurrency(total)}`;
+  } else {
+    // fallback: se não existir, tenta criar um elemento visível
+    const fallback = document.getElementById("cartTotal");
+    if (fallback) fallback.innerHTML = `<strong>Total:</strong> ${formatCurrency(total)}`;
+  }
 
-  // botão remover
-  cartList.addEventListener("click", (e) => {
-    if (e.target.classList.contains("remove-btn")) {
-      const idx = e.target.getAttribute("data-index");
-      const newCart = getCart();
-      newCart.splice(idx, 1);
-      saveCart(newCart);
+  // remover item (delegation)
+  rowsContainer.addEventListener("click", (ev) => {
+    const btn = ev.target.closest && ev.target.closest(".remove-btn");
+    if (!btn) return;
+    const idx = Number(btn.getAttribute("data-index"));
+    if (Number.isNaN(idx)) return;
+    const cur = getCart();
+    cur.splice(idx, 1);
+    saveCart(cur);
+    // recarrega para recalcular índices com facilidade
+    location.reload();
+  });
+
+  // limpar tudo
+  if (clearBtn) {
+    clearBtn.style.display = "";
+    clearBtn.addEventListener("click", () => {
+      localStorage.removeItem(STORAGE_KEY);
       location.reload();
-    }
-  });
-
-  // botão finalizar → enviar mensagem pro WhatsApp
-  finalizeBtn?.addEventListener("click", function () {
-    const lead = JSON.parse(localStorage.getItem("lw_lead") || "{}");
-    const nome = lead.nome || "Cliente";
-    const whatsapp = lead.whatsapp || "";
-
-    let message = `*Novo pedido de intercâmbio:*\n\n👤 *Nome:* ${nome}\n📱 *WhatsApp:* ${whatsapp}\n\n🛒 *Itens selecionados:*\n`;
-
-    cart.forEach((item) => {
-      message += `• ${item.type}: ${item.title} - ${formatCurrency(item.price)}\n`;
     });
+  }
 
-    message += `\n💰 *Total:* ${formatCurrency(total)}\n\nPor favor, entre em contato para concluir.`;
+ // finalizar -> whatsapp
+  if (finalizeBtn) {
+    finalizeBtn.style.display = "";
+    finalizeBtn.addEventListener("click", () => {
+      const leadData = JSON.parse(localStorage.getItem("lw_lead") || "{}");
+      const nome = leadData.nome || "Cliente";
+      const whatsapp = leadData.whatsapp || "";
+      
+      // NOVO CONTEÚDO DA MENSAGEM (Com Emojis, Negrito e Quebras de Linha)
+      let message = `*INTERCÂMBIO EM MALTA*\n\n`;
 
-    const encodedMsg = encodeURIComponent(message);
-    const phone = "5541992188670"; // SEU NÚMERO AQUI
-    const url = `https://wa.me/${phone}?text=${encodedMsg}`;
-    window.open(url, "_blank");
-  });
+      message += `_DADOS DO CLIENTE:_\n`;
+      message += `*Nome:* ${nome}\n`;
+      message += `*WhatsApp:* ${whatsapp}\n\n`;
+
+      message += `_ITENS SELECIONADOS:_\n`;
+      
+      // Lista de itens (loop)
+      cart.forEach((it) => {
+        message += `${it.type || "Item"}: ${it.title || "—"} (${formatCurrency(it.price || 0)})\n`;
+      });
+      
+      message += `\n*TOTAL DO ORÇAMENTO:* *${formatCurrency(total)}*\n`;
+      message += `\nOlá! Gostaria de mais informações para o meu intercâmbio...`;
+      // FIM DO NOVO CONTEÚDO
+
+      const encoded = encodeURIComponent(message);
+      const phone = "5541992188670"; // troque se precisar
+      window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
+    });
+  }
+
+  // util: escape simples para evitar injeção acidental nas strings
+  function escapeHtml(str) {
+    if (typeof str !== "string") return str;
+    return str.replace(/[&<>"'`=\/]/g, function (s) {
+      return ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+        "/": "&#x2F;",
+        "`": "&#x60;",
+        "=": "&#x3D;"
+      })[s];
+    });
+  }
 });

@@ -1,51 +1,83 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Revisar meu intercâmbio — LinguaWiser</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    /* estilos específicos para a página do carrinho (pequenos ajustes) */
-    .cart-page { padding: 6rem 7%; min-height: 80vh; }
-    .cart-list { display: grid; gap: 1rem; max-width: 900px; margin: 2rem auto; }
-    .cart-item { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem; border: .1rem solid #ddd; background:#fff; border-radius:8px; }
-    .cart-item h4 { margin:0; font-size:1.6rem; color:#222; }
-    .cart-item .price { font-weight:700; color:#0d265d; }
-    .cart-actions { display:flex; gap:1rem; justify-content:center; margin-top:2rem; }
-    .remove-btn { background:#ff3b3b; color:#fff; padding:8px 12px; border-radius:6px; cursor:pointer; }
-    .final-btn { background:#007bff; color:#fff; padding:12px 18px; border-radius:8px; cursor:pointer; font-weight:700; }
-    .lead-info { max-width: 900px; margin: 0 auto; text-align:left; padding:1rem; background:#f9f9f9; border-radius:8px; border: .1rem solid #e5e5e5; }
-  </style>
-</head>
-<body>
-  <header class="header">
-    <img src="images/logo.png" alt="LinguaWiser Logo" class="logo" />
-    <nav class="navbar"><a href="app.html">Voltar</a></nav>
-    <div class="icons">
-      <a href="app.html" class="cart-link"><i class="fas fa-arrow-left"></i></a>
-    </div>
-  </header>
+<!DOCTYPE html>
+<html lang="pt-BR" id="cartPage">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho | LínguaWiser</title>
 
-  <main class="cart-page">
-    <h1 class="heading">Revisar meu intercâmbio</h1>
+    <!-- Ícones e estilo -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-    <div id="leadBox" class="lead-info" style="display:none;">
-      <h3>Dados do lead</h3>
-      <p id="leadName"></p>
-      <p id="leadWhatsapp"></p>
-    </div>
+  <body id="cartPage">
+    <!-- Header fixo igual ao app principal -->
+    <header class="header">
+      <img src="images/logo.png" alt="LinguaWiser Logo" class="logo" />
+      <nav class="navbar">
+        <a href="app.html#home">Início</a>
+        <a href="app.html#servicesIntro">Cursos</a>
+        <a href="app.html#accommodationIntro">Acomodação</a>
+        <a href="app.html#transportIntro">Transporte</a>
+      </nav>
+      <div class="icons">
+        <a href="app.html" class="fas fa-arrow-left" title="Voltar"></a>
+      </div>
+    </header>
 
-    <div id="cartList" class="cart-list"></div>
+    <!-- Conteúdo principal -->
+    <main class="cart-page">
+      <!-- Cabeçalho -->
+      <div class="cart-header">
+        <h1>Seu carrinho de intercâmbio</h1>
+        <p>
+          Confira abaixo os itens escolhidos para o seu plano.
+        </p>
+        <p>
+          Revise, altere ou finalize para falar com a gente no WhatsApp.
+        </p>
+        
+      </div>
 
-    <div style="text-align:center" id="emptyMsg">Seu carrinho está vazio. Volte à página inicial para montar seu intercâmbio.</div>
+      <!-- Informações do usuário -->
+      <div class="lead-info" id="leadInfo"></div>
 
-    <div class="cart-actions" id="cartActions" style="display:none;">
-      <button class="final-btn" id="finalizeBtn">Finalizar e enviar para WhatsApp</button>
-      <button class="remove-all-btn" id="clearBtn" style="background:#999;color:#fff;padding:8px 12px;border-radius:6px;">Limpar tudo</button>
-    </div>
-  </main>
+      <!-- Mensagem se estiver vazio -->
+      <div id="emptyMsg" style="display: none">
+        <p>Seu carrinho está vazio 😕</p><br/>
+        <a href="app.html#coursesSection" class="btn">Voltar para escolher</a>
+      </div>
 
-  <script src="js/script.js"></script>
-</body>
+      <!-- Tabela de itens -->
+      <table class="cart-table" id="cartTable" style="display: none">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="cartItems"></tbody>
+      </table>
+
+      <!-- Total -->
+      <div class="cart-total" id="cartTotal" style="display: none"></div>
+
+      <!-- Botões -->
+      <div class="cart-actions" id="cartActions" style="display: none">
+        <button class="final-btn" id="finalizeCart">
+          <i class="fab fa-whatsapp"></i> Enviar via WhatsApp
+        </button>
+        <button class="remove-all-btn" id="clearCart">
+          <i class="fas fa-trash"></i> Esvaziar carrinho
+        </button>
+      </div>
+    </main>
+
+    <!-- JS principal -->
+    <script src="js/script.js"></script>
+  </body>
 </html>

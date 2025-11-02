@@ -1525,3 +1525,195 @@ input {
   .cart-link { font-size: 2rem; }
   .cart-link .cart-count { top: -6px; right: -8px; font-size: 1rem; padding: 2px 5px; }
 }
+
+/* ==========================================================
+   🛒 PÁGINA DO CARRINHO — LinguaWiser
+   ========================================================== */
+
+body#cartPage {
+  background: #f9fafc;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  padding-top: 120px; /* evita corte do título */
+}
+
+/* ======= Layout principal ======= */
+.cart-page {
+  padding: 2rem 7%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ======= Cabeçalho da página ======= */
+.cart-header {
+  text-align: center;
+  margin-bottom: 2rem;  
+}
+
+.cart-header h1 {
+  font-size: 2.2rem;
+  color: #0d265d;
+  margin-bottom: 2rem;
+  text-transform: none;
+}
+
+.cart-header p {
+  color: #555;
+  font-size: 1.1rem;
+  text-transform: none;
+}
+
+.cart-header img {
+  width: 80px;
+  margin-top: 1rem;
+}
+
+/* ======= Dados do Lead ======= */
+.lead-info {
+  background: #fff;
+  border-radius: 12px;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+}
+
+.lead-info h3 {
+  color: #0d265d;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  text-transform: none;
+}
+
+/* ======= Tabela do Carrinho ======= */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.cart-table th {
+  background: #0d265d;
+  color: #fff;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cart-table td {
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.cart-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* efeito hover nas linhas */
+.cart-table tbody tr:hover {
+  background: #f2f6ff;
+  transition: background 0.2s ease;
+}
+
+.cart-table td.price {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.cart-table .remove-btn {
+  background: none;
+  border: none;
+  color: #ff4c4c;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: 0.2s;
+}
+
+.cart-table .remove-btn:hover {
+  color: #b80000;
+  transform: scale(1.1);
+}
+
+/* ======= Total ======= */
+.cart-total {
+  text-align: right;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0d265d;
+  margin-top: 1.5rem;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ======= Botões ======= */
+.cart-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.final-btn {
+  background: #007bff;
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  transition: background 0.2s;
+}
+
+.final-btn:hover {
+  background: #0056b3;
+}
+
+.remove-all-btn {
+  background: #999;
+  color: #fff;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  transition: background 0.2s;
+}
+
+.remove-all-btn:hover {
+  background: #666;
+}
+
+/* ======= Carrinho vazio ======= */
+#emptyMsg {
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 768px) {
+  .cart-table th,
+  .cart-table td {
+    font-size: 1.3rem;
+  }
+
+  .cart-header img {
+    width: 60px;
+  }
+
+  .final-btn,
+  .remove-all-btn {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+  }
+}

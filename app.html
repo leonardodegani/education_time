@@ -1,30 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LinguaWiser | Learn English</title>
 
     <!-- Font Link -->
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- CSS Link -->
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <!-- WhatsApp Btn -->
-
     <a
       href="https://wa.me/5541992188670?text=Hello!%20Tenho%20interesse%20nas%20aulas%20de%20ingl%C3%AAs%20da%20LinguaWiser...%20"
       class="whatsapp-button"
@@ -38,19 +30,14 @@
     </a>
 
     <!-- Header starts here -->
-
     <header class="header">
-      <img src="images/logo.png" alt="Education Time Logo" class="logo" />
+      <img src="images/logo.png" alt="LinguaWiser Logo" class="logo" />
 
       <nav class="navbar">
-        <a href="#malta">Malta</a>
-        <a href="#about">Cursos</a>
-        <a href="#services">Acomodação</a>
-        <a href="#courses">Transporte</a>
-        <a href="#courses">Esportes</a>
-        <a href="#courses">Turismo</a>
-        <a href="#courses">Vistos</a>
-        <a href="#courses">Marketplace</a>
+        <a href="#home">Malta</a>
+        <a href="#servicesIntro">Cursos</a>
+        <a href="#accommodationIntro">Acomodação</a>
+        <a href="#transportIntro">Transporte</a>
       </nav>
 
       <div class="icons">
@@ -63,38 +50,37 @@
             <a href="?lang=en">English</a>
           </div>
         </details>
+
+        <!-- Cart icon -->
+        <a href="cart.html" class="cart-link" aria-label="Ver carrinho">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cartCount" class="cart-count">0</span>
+        </a>
+
         <div class="fas fa-bars" id="menu-btn"></div>
       </div>
     </header>
-
     <!-- Header ends here -->
 
-    <!-- Home starts here -->
-
+    <!-- Home / Hero -->
     <section class="malta" id="home">
       <div class="content">
         <h2>Monte aqui o seu intercâmbio</h2>
-        <h3>Ilha de Malta</h3>      
-        <br/> <br/> <br/> 
-         <h2>Descubra e viva uma experiência única!</h2>
+        <h3>Ilha de Malta</h3>
+        <br /><br /><br />
+        <h2>Descubra e viva uma experiência única!</h2>
         <p>
-          Seu intercâmbio começa aqui. Escolha onde estudar, onde ficar e como viver Malta do seu jeito. Monte seu plano ideal e fale direto com nossa equipe para transformar seu sonho em experiência real.
-          
-          
+          Seu intercâmbio começa aqui. Escolha onde estudar, onde ficar e como
+          viver Malta do seu jeito. Monte seu plano ideal e fale direto com
+          nossa equipe para transformar seu sonho em experiência real.
         </p>
-        <a href="#services" class="btn scroll-btn">Comece aqui</a>
-     
+        <a href="#coursesSection" class="btn" id="startBtn">Comece aqui</a>
       </div>
     </section>
 
-    <!-- Home ends here -->
-
-    
-
-    <!-- Cursos no exterior starts here -->
-
-    <section class="services" id="services">
-      <br/><br/>
+    <!-- Cursos intro -->
+    <section class="services" id="servicesIntro">
+      <br /><br />
       <h1 class="heading">Cursos</h1>
       <div class="box-container">
         <div class="box">
@@ -102,402 +88,414 @@
           <h3>Escolha o seu curso de inglês</h3>
           <p>
             Estude em escolas reconhecidas internacionalmente e escolha o curso
-            ideal para o seu perfil, com opções que equilibram aprendizado,
-            prática e vivência cultural.
+            ideal para o seu perfil.
           </p>
-        </div>
-    </section>
-
-   
-
-    <section class="courses" id="intercambio">
-      
-      <div class="box-container">
-        <div class="box">
-          <div class="image shine">
-            <img src="images/malta-pembroke.png" alt="" />
-          </div>
-          <div class="content">
-            <a class="btn" onclick="openPopup('popup1')">Detalhes</a>
-            <a class="btn btn-quero">Quero esse</a>
-            <h3>Pembroke</h3>
-            <p>3 semanas</p>
-            <h5><span class="old-price">R$5.200,00</span>
-      <span class="new-price">R$4.680,00</span>
-      <span class="discount">-10%</span></h5>
-            <div class="icons">
-              <span><i class="far fa-bookmark"></i> Sem acomodação</span>
-              <span><i class="far fa-clock"></i> 20 lições p/ semana</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="image shine">
-            <img src="images/malta-sliema.png" alt="" />
-          </div>
-          <div class="content">
-            <a class="btn" onclick="openPopup('popup2')">Detalhes</a>
-            <a class="btn btn-quero">Quero esse</a>
-            <h3>Sliema</h3>
-            <p>3 semanas</p>
-            <h5><span class="old-price">R$5.200,00</span>
-      <span class="new-price">R$4.680,00</span>
-      <span class="discount">-10%</span></h5>
-            <div class="icons">
-              <span><i class="far fa-bookmark"></i> 43 horas totais</span>
-              <span><i class="far fa-clock"></i> 1 hora por semana</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="image shine">
-            <img src="images/malta-stpaulsbay.png" alt="" />
-          </div>
-          <div class="content">
-            <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
-            <a class="btn btn-quero">Quero esse</a>
-            <h3>St. Paul's Bay</h3>
-            <p>3 semanas</p>
-            <h5><span class="old-price">R$5.200,00</span>
-      <span class="new-price">R$4.680,00</span>
-      <span class="discount">-10%</span></h5>
-            <div class="icons">
-              <span><i class="far fa-bookmark"></i> 86 horas totais</span>
-              <span><i class="far fa-clock"></i> 2 horas por semana</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Botão "Carregar mais" -->
+    <!-- Cursos list (visível primeiro) -->
+    <section class="courses stage" id="coursesSection" data-step="courses">
+  <div class="box-container" id="coursesContainer">
+    <!-- Cursos visíveis inicialmente -->
+    <div class="box course-item" data-title="Pembroke" data-type="Curso" data-price="4680" data-original="5200">
+      <div class="image shine">
+        <img src="images/malta-pembroke.png" alt="Pembroke" />
+      </div>
+      <div class="content">
+        <a class="btn" onclick="openPopup('popup1')">Detalhes</a>
+        <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+        <h3>Pembroke</h3>
+        <p>3 semanas</p>
+        <div class="price">
+          <span class="old-price">R$5.200,00</span>
+          <span class="new-price">R$4.680,00</span>
+          <span class="discount">-10%</span>
+        </div>
+        <div class="icons">
+          <span><i class="far fa-bookmark"></i> Sem acomodação</span>
+          <span><i class="far fa-clock"></i> 20 lições p/ semana</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box course-item" data-title="Sliema" data-type="Curso" data-price="4960" data-original="5500">
+      <div class="image shine">
+        <img src="images/malta-sliema.png" alt="Sliema" />
+      </div>
+      <div class="content">
+        <a class="btn" onclick="openPopup('popup2')">Detalhes</a>
+        <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+        <h3>Sliema</h3>
+        <p>3 semanas</p>
+        <div class="price">
+          <span class="old-price">R$5.500,00</span>
+          <span class="new-price">R$4.960,00</span>
+          <span class="discount">-10%</span>
+        </div>
+        <div class="icons">
+          <span><i class="far fa-bookmark"></i> Sem acomodação</span>
+          <span><i class="far fa-clock"></i> 20 lições p/ semana</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box course-item" data-title="St. Paul's Bay" data-type="Curso" data-price="4960" data-original="5500">
+      <div class="image shine">
+        <img src="images/malta-stpaulsbay.png" alt="St. Paul's Bay" />
+      </div>
+      <div class="content">
+        <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
+        <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+        <h3>St. Paul's Bay</h3>
+        <p>3 semanas</p>
+        <div class="price">
+          <span class="old-price">R$5.500,00</span>
+          <span class="new-price">R$4.960,00</span>
+          <span class="discount">-10%</span>
+        </div>
+        <div class="icons">
+          <span><i class="far fa-bookmark"></i> Sem acomodação</span>
+          <span><i class="far fa-clock"></i> 20 lições p/ semana</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cursos extras (inicialmente ocultos) -->
+    <div class="box course-item extra-course" data-title="St. Paul's Bay" data-type="Curso" data-price="4960" data-original="5500">
+  <div class="image shine">
+    <img src="images/malta-stpaulsbay.png" alt="St. Paul's Bay" />
+  </div>
+  <div class="content">
+    <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
+    <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+    <h3>St. Paul's Bay</h3>
+    <p>3 semanas</p>
+    <div class="price">
+      <span class="old-price">R$5.500,00</span>
+      <span class="new-price">R$4.960,00</span>
+      <span class="discount">-10%</span>
+    </div>
+    <div class="icons">
+      <span><i class="far fa-bookmark"></i> Sem acomodação</span>
+      <span><i class="far fa-clock"></i> 20 lições p/ semana</span>
+    </div>
+  </div>
+</div>
+
+ 
+<div class="box course-item extra-course" data-title="St. Paul's Bay" data-type="Curso" data-price="4960" data-original="5500">
+  <div class="image shine">
+    <img src="images/malta-stpaulsbay.png" alt="St. Paul's Bay" />
+  </div>
+  <div class="content">
+    <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
+    <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+    <h3>St. Paul's Bay</h3>
+    <p>3 semanas</p>
+    <div class="price">
+      <span class="old-price">R$5.500,00</span>
+      <span class="new-price">R$4.960,00</span>
+      <span class="discount">-10%</span>
+    </div>
+    <div class="icons">
+      <span><i class="far fa-bookmark"></i> Sem acomodação</span>
+      <span><i class="far fa-clock"></i> 20 lições p/ semana</span>
+    </div>
+  </div>
+</div>
+
+
+ <div class="box course-item extra-course" data-title="St. Paul's Bay" data-type="Curso" data-price="4960" data-original="5500">
+  <div class="image shine">
+    <img src="images/malta-stpaulsbay.png" alt="St. Paul's Bay" />
+  </div>
+  <div class="content">
+    <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
+    <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+    <h3>St. Paul's Bay</h3>
+    <p>3 semanas</p>
+    <div class="price">
+      <span class="old-price">R$5.500,00</span>
+      <span class="new-price">R$4.960,00</span>
+      <span class="discount">-10%</span>
+    </div>
+    <div class="icons">
+      <span><i class="far fa-bookmark"></i> Sem acomodação</span>
+      <span><i class="far fa-clock"></i> 20 lições p/ semana</span>
+    </div>
+  </div>
+</div>
+
+
   <div class="load-more">
-    <button id="loadMoreBtn">
-      <i class="fas fa-plus"></i>
-    </button>
+    <button id="loadMoreCourses"><i class="fas fa-plus"></i></button>
   </div>
 </section>
 
 
-    <!-- Cursos no exterior ends here -->
-    
-
-    <!-- Pop Up Cursos no Exterior starts here -->
-
-    <div class="popup" id="popup7">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup1')">&times;</span>
-        <h2>Ilha de Malta</h2>
+    <!-- Popups (mantive os seus conteúdos) -->
+    <div class="popup" id="popup1">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('popup1')">×</span>
+        
+        <h2>Sprachcaffe - Club Village Malta 🏝️</h2>
+        
         <div class="icons">
-          <span><i class="far fa-bookmark"></i> Monte seu pacote</span>
-          <span><i class="far fa-clock"></i> 4-12 horas mensais</span>
+            <span><i class="fas fa-map-marker-alt"></i> St. Julian´s, Malta</span>
+            <span><i class="far fa-clock"></i> Duração Flexível</span> 
         </div>
+        
         <p>
-          Este curso oferece flexibilidade total. Ideal para quem tem agenda
-          variada e quer montar um plano personalizado.
+            Se você busca uma imersão de inglês que combine aprendizado de alta qualidade com um estilo de vida vibrante à beira-mar, você encontrou!
+        </p><br/>
+        <p>
+            O campus da Sprachcaffe em St. Julian's é o nosso **Club Village**: mais do que uma escola, é um resort de aprendizado. Imagine aulas eficazes seguidas por um mergulho refrescante na piscina, tudo isso em um ambiente que respira história e hospitalidade.
         </p>
-        <div class="details">
-          <span
-            ><i class="far fa-dollar-sign"></i> Pague R$130,00 por hora</span
-          >
+        
+        <h3 class="detalhes-titulo">Detalhes da Escola</h3>
+        
+        <ul>
+            <li>
+                <strong>Campus Exclusivo:</strong> Aulas em edifícios históricos de calcário com **Piscina Central**, terraço e lounge, um verdadeiro ponto de encontro multicultural.
+            </li>
+            <li>
+                <strong>Imersão 24/7:</strong> Estude, viva e socialize com estudantes do mundo todo no mesmo local. Suas habilidades em inglês decolam naturalmente!
+            </li>
+            <li>
+                <strong>Localização Estratégica:</strong> Apenas **10 minutos da praia** de St. Julian's.
+            </li>
+            <li>
+                <strong>Opções Flexíveis:</strong> Cursos Padrão, Intensivos, preparatórios para Certificados Internacionais ou programas de Trabalho e Estudo (Work & Study).
+            </li>
+        </ul>
+        
+        <div class="map-container">
+            <h3 class="map-titulo" style="font-size: 1.4rem; color: #333; margin-bottom: 1rem;">Onde Estamos em St. Julian's</h3>
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3230.8851546313144!2d14.47581997623954!3d35.9253110165267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e4566b28fcbf9%3A0xa373453aa6226888!2sSprachcaffe%20Languages%20PLUS!5e0!3m2!1spt-BR!2sbr!4v1762100170612!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
         </div>
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
+        
+
     </div>
+</div>
 
     <div class="popup" id="popup2">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup2')">&times;</span>
-        <h2>Pacote Starter</h2>
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('popup2')">×</span>
+        
+        <h2>Sprachcaffe - Club Village Malta 🏝️</h2>
+        
         <div class="icons">
-          <span><i class="far fa-bookmark"></i> 43 horas totais</span>
-          <span><i class="far fa-clock"></i> 1 hora por semana</span>
+            <span><i class="fas fa-map-marker-alt"></i> St. Julian´s, Malta</span>
+            <span><i class="far fa-clock"></i> Duração Flexível</span> 
         </div>
+        
         <p>
-          Plano pensado para quem busca manter o contato constante com o inglês
-          sem comprometer o orçamento. Com uma carga horária leve e a inclusão
-          de períodos de férias, é a opção ideal para quem quer aprender de
-          forma gradual, com flexibilidade e regularidade.
+            Se você busca uma imersão de inglês que combine aprendizado de alta qualidade com um estilo de vida vibrante à beira-mar, você encontrou!
+        </p><br/>
+        <p>
+            O campus da Sprachcaffe em St. Julian's é o nosso **Club Village**: mais do que uma escola, é um resort de aprendizado. Imagine aulas eficazes seguidas por um mergulho refrescante na piscina, tudo isso em um ambiente que respira história e hospitalidade.
         </p>
-        <div class="details">
-          <span
-            ><i class="far fa-snowflake"></i> 2 semanas de férias de
-            inverno</span
-          >
-          <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
-          <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
-          <span><i class="far fa-dollar-sign"></i> Pague em 12x R$340,00</span>
+        
+        <h3 class="detalhes-titulo">Detalhes da Escola</h3>
+        
+        <ul>
+            <li>
+                <strong>Campus Exclusivo:</strong> Aulas em edifícios históricos de calcário com **Piscina Central**, terraço e lounge, um verdadeiro ponto de encontro multicultural.
+            </li>
+            <li>
+                <strong>Imersão 24/7:</strong> Estude, viva e socialize com estudantes do mundo todo no mesmo local. Suas habilidades em inglês decolam naturalmente!
+            </li>
+            <li>
+                <strong>Localização Estratégica:</strong> Apenas **10 minutos da praia** de St. Julian's.
+            </li>
+            <li>
+                <strong>Opções Flexíveis:</strong> Cursos Padrão, Intensivos, preparatórios para Certificados Internacionais ou programas de Trabalho e Estudo (Work & Study).
+            </li>
+        </ul>
+        
+        <div class="map-container">
+            <h3 class="map-titulo" style="font-size: 1.4rem; color: #333; margin-bottom: 1rem;">Onde Estamos em St. Julian's</h3>
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3230.8851546313144!2d14.47581997623954!3d35.9253110165267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e4566b28fcbf9%3A0xa373453aa6226888!2sSprachcaffe%20Languages%20PLUS!5e0!3m2!1spt-BR!2sbr!4v1762100170612!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
         </div>
+        
 
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
     </div>
+</div>
 
     <div class="popup" id="popup3">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup3')">&times;</span>
-        <h2>Pacote Regular</h2>
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('popup3')">×</span>
+        
+        <h2>Sprachcaffe - Club Village Malta 🏝️</h2>
+        
         <div class="icons">
-          <span><i class="far fa-bookmark"></i> 86 horas totais</span>
-          <span><i class="far fa-clock"></i> 2 horas por semana</span>
+            <span><i class="fas fa-map-marker-alt"></i> St. Julian´s, Malta</span>
+            <span><i class="far fa-clock"></i> Duração Flexível</span> 
         </div>
+        
         <p>
-          São dois encontros semanais. Ideal para quem deseja avançar com mais
-          consistência, sem abrir mão da flexibilidade. O curso contempla pausas
-          planejadas ao longo do ano e proporciona um equilíbrio perfeito entre
-          ritmo de aprendizado e investimento acessível.
+            Se você busca uma imersão de inglês que combine aprendizado de alta qualidade com um estilo de vida vibrante à beira-mar, você encontrou!
+        </p><br/>
+        <p>
+            O campus da Sprachcaffe em St. Julian's é o nosso **Club Village**: mais do que uma escola, é um resort de aprendizado. Imagine aulas eficazes seguidas por um mergulho refrescante na piscina, tudo isso em um ambiente que respira história e hospitalidade.
         </p>
-        <div class="details">
-          <span
-            ><i class="far fa-snowflake"></i> 2 semanas de férias de
-            inverno</span
-          >
-          <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
-          <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
-          <span><i class="far fa-dollar-sign"></i> Pague em 12x R$609,00</span>
+        
+        <h3 class="detalhes-titulo">Detalhes da Escola</h3>
+        
+        <ul>
+            <li>
+                <strong>Campus Exclusivo:</strong> Aulas em edifícios históricos de calcário com **Piscina Central**, terraço e lounge, um verdadeiro ponto de encontro multicultural.
+            </li>
+            <li>
+                <strong>Imersão 24/7:</strong> Estude, viva e socialize com estudantes do mundo todo no mesmo local. Suas habilidades em inglês decolam naturalmente!
+            </li>
+            <li>
+                <strong>Localização Estratégica:</strong> Apenas **10 minutos da praia** de St. Julian's.
+            </li>
+            <li>
+                <strong>Opções Flexíveis:</strong> Cursos Padrão, Intensivos, preparatórios para Certificados Internacionais ou programas de Trabalho e Estudo (Work & Study).
+            </li>
+        </ul>
+        
+        <div class="map-container">
+            <h3 class="map-titulo" style="font-size: 1.4rem; color: #333; margin-bottom: 1rem;">Onde Estamos em St. Julian's</h3>
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3230.8851546313144!2d14.47581997623954!3d35.9253110165267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e4566b28fcbf9%3A0xa373453aa6226888!2sSprachcaffe%20Languages%20PLUS!5e0!3m2!1spt-BR!2sbr!4v1762100170612!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
         </div>
+        
 
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
     </div>
+</div>
 
-    <!-- Pop Up Cursos no Exterior ends here -->
-
-    <!-- Acomodação starts here -->
-
-
-
- <section class="services" id="services">
-<h1 class="heading">Acomodação</h1>
+    <!-- Acomodação intro -->
+    <section class="services" id="accommodationIntro" style="display:none;">
+      <h1 class="heading">Acomodação</h1>
       <div class="box-container">
         <div class="box">
           <img src="images/acomodacao.png" alt="" />
           <h3>Escolha a sua acomodação</h3>
-          <p>
-            Encontre o tipo de hospedagem perfeita para o seu estilo — de
-            residências estudantis a apartamentos compartilhados, com conforto e
-            localização estratégica.
-          </p>
-
+          <p>Encontre o tipo de hospedagem perfeita para o seu estilo.</p>
         </div>
-
       </div>
     </section>
 
-
-    <section class="courses" id="intercambio">
-      
-      <div class="box-container">
-        <div class="box">
+    <!-- Acomodação list (invisível até escolher curso) -->
+    <section class="courses stage" id="accommodationSection" data-step="accommodation" style="display:none;">
+      <div class="box-container" id="accommodationContainer">
+        <!-- Acomodação 1 -->
+        <div class="box accom-item" data-title="Standard Apartment - Individual" data-type="Acomodação" data-price="4680" data-original="5200">
           <div class="image shine">
-            <img src="images/acomodacao-standard.jpg" alt="" />
+            <img src="images/acomodacao-standard.jpg" alt="Standard" />
           </div>
           <div class="content">
             <a class="btn" onclick="openPopup('popup1')">Detalhes</a>
-                        <a class="btn btn-quero">Quero esse</a>
-            <h3>Pembroke</h3>
+            <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+            <h3>Standard - Individual</h3>
             <p><i class="fa-solid fa-bed"></i> Quarto individual</p>
-            <h5><span class="old-price">R$5.200,00</span>
-      <span class="new-price">R$4.680,00</span>
-      <span class="discount">-10%</span></h5>
+            <div class="price">
+              <span class="old-price">R$5.200,00</span>
+              <span class="new-price">R$4.680,00</span>
+              <span class="discount">-10%</span>
+            </div>
             <p>Valor por semana</p>
             <div class="icons">
-              <span
-                ><i class="far fa-calendar"></i> 02 de Novembro a 05 de
-                abril</span
-              >
+              <span><i class="far fa-calendar"></i> 02 de Novembro a 05 de abril</span>
               <span><i class="fas fa-home"></i> Standard Apartment</span>
             </div>
           </div>
         </div>
 
-        <div class="box">
+        <!-- Acomodação 2 -->
+        <div class="box accom-item" data-title="Comfort Apartment - Duplo" data-type="Acomodação" data-price="4200" data-original="4800">
           <div class="image shine">
-            <img src="images/acomodacao-standard-duplo.jpg" alt="" />
+            <img src="images/acomodacao-standard-duplo.jpg" alt="Comfort" />
           </div>
           <div class="content">
             <a class="btn" onclick="openPopup('popup2')">Detalhes</a>
-                        <a class="btn btn-quero">Quero esse</a>
-            <h3>Pembroke</h3>
+            <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+            <h3>Comfort - Duplo</h3>
             <p><i class="fa-solid fa-bed"></i> Quarto duplo</p>
-            <h5><span class="old-price">R$5.200,00</span>
-      <span class="new-price">R$4.680,00</span>
-      <span class="discount">-10%</span></h5>
+            <div class="price">
+              <span class="old-price">R$4.800,00</span>
+              <span class="new-price">R$4.200,00</span>
+              <span class="discount">-12%</span>
+            </div>
             <p>Valor por semana</p>
             <div class="icons">
-              <span
-                ><i class="far fa-calendar"></i> 24 de agosto a 01 de
-                novembro</span
-              >
+              <span><i class="far fa-calendar"></i> 24 de agosto a 01 de novembro</span>
               <span><i class="fas fa-home"></i> Comfort Apartment</span>
             </div>
           </div>
         </div>
 
-        <div class="box">
+        <!-- Acomodação 3 -->
+        <div class="box accom-item" data-title="Studio - Duplo" data-type="Acomodação" data-price="3800" data-original="4200">
           <div class="image shine">
-            <img src="images/acomodacao-studio-duplo.jpg" alt="" />
+            <img src="images/acomodacao-studio-duplo.jpg" alt="Studio" />
           </div>
           <div class="content">
             <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
-                        <a class="btn btn-quero">Quero esse</a>
-            <h3>Pembroke</h3>
+            <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+            <h3>Studio - Duplo</h3>
             <p><i class="fa-solid fa-bed"></i> Studio duplo</p>
-            <h5><span class="old-price">R$5.200,00</span>
-      <span class="new-price">R$4.680,00</span>
-      <span class="discount">-10%</span></h5>
+            <div class="price">
+              <span class="old-price">R$4.200,00</span>
+              <span class="new-price">R$3.800,00</span>
+              <span class="discount">-9%</span>
+            </div>
             <p>Valor por semana</p>
             <div class="icons">
-              <span
-                ><i class="far fa-calendar"></i> 02 de Novembro a 05 de
-                abril</span
-              >
+              <span><i class="far fa-calendar"></i> 02 de Novembro a 05 de abril</span>
               <span><i class="fas fa-home"></i> Studio</span>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="load-more">
+        <button id="loadMoreAccommodation"><i class="fas fa-plus"></i></button>
+        <br /><br /><br />
+        <a class="btn btn-sem-acomodacao" id="skipAccommodationBtn">Prosseguir sem acomodação</a>
+      </div>
     </section>
 
-    
-
-<!-- Botão "Carregar mais" -->
-  <div class="load-more">
-    
-    <button id="loadMoreBtn">
-      <i class="fas fa-plus"></i>
-    </button>
-    <br/><br/><br/><br/>
-          <a class="btn btn-sem-acomodacao" onclick="addAcomodacao('Sem acomodação')">
-  Prosseguir sem acomodação
-</a>
-  </div>
-  
-</section>
-
-
-    <!-- Acomodação ends here -->
-
-    <!-- Pop Up Acomodação starts here -->
-
-    <div class="popup" id="popup7">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup1')">&times;</span>
-        <h2>Ilha de Malta</h2>
-        <div class="icons">
-          <span><i class="far fa-bookmark"></i> Monte seu pacote</span>
-          <span><i class="far fa-clock"></i> 4-12 horas mensais</span>
-        </div>
-        <p>
-          Este curso oferece flexibilidade total. Ideal para quem tem agenda
-          variada e quer montar um plano personalizado.
-        </p>
-        <div class="details">
-          <span
-            ><i class="far fa-dollar-sign"></i> Pague R$130,00 por hora</span
-          >
-        </div>
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
-    </div>
-
-    <div class="popup" id="popup2">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup2')">&times;</span>
-        <h2>Pacote Starter</h2>
-        <div class="icons">
-          <span><i class="far fa-bookmark"></i> 43 horas totais</span>
-          <span><i class="far fa-clock"></i> 1 hora por semana</span>
-        </div>
-        <p>
-          Plano pensado para quem busca manter o contato constante com o inglês
-          sem comprometer o orçamento. Com uma carga horária leve e a inclusão
-          de períodos de férias, é a opção ideal para quem quer aprender de
-          forma gradual, com flexibilidade e regularidade.
-        </p>
-        <div class="details">
-          <span
-            ><i class="far fa-snowflake"></i> 2 semanas de férias de
-            inverno</span
-          >
-          <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
-          <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
-          <span><i class="far fa-dollar-sign"></i> Pague em 12x R$340,00</span>
-        </div>
-
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
-    </div>
-
-    <div class="popup" id="popup3">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup3')">&times;</span>
-        <h2>Pacote Regular</h2>
-        <div class="icons">
-          <span><i class="far fa-bookmark"></i> 86 horas totais</span>
-          <span><i class="far fa-clock"></i> 2 horas por semana</span>
-        </div>
-        <p>
-          São dois encontros semanais. Ideal para quem deseja avançar com mais
-          consistência, sem abrir mão da flexibilidade. O curso contempla pausas
-          planejadas ao longo do ano e proporciona um equilíbrio perfeito entre
-          ritmo de aprendizado e investimento acessível.
-        </p>
-        <div class="details">
-          <span
-            ><i class="far fa-snowflake"></i> 2 semanas de férias de
-            inverno</span
-          >
-          <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
-          <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
-          <span><i class="far fa-dollar-sign"></i> Pague em 12x R$609,00</span>
-        </div>
-
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
-    </div>
-
-
-    <!-- Pop Up Acomodação ends here -->
-
-    <!-- Transporte starts here -->
-
-
-    <section class="services" id="services">
+    <!-- Transporte intro -->
+    <section class="services" id="transportIntro" style="display:none;">
       <h1 class="heading">Transporte</h1>
       <div class="box-container">
         <div class="box">
           <img src="images/icone-transporte.png" alt="" />
           <h3>Escolha o seu transporte</h3>
-          <p>
-            Estude em escolas reconhecidas internacionalmente e escolha o curso
-            ideal para o seu perfil, com opções que equilibram aprendizado,
-            prática e vivência cultural.
-          </p>
+          <p>Escolha transfer ou outras opções de deslocamento.</p>
         </div>
+      </div>
     </section>
 
-    <section class="courses" id="intercambio">
-      <div class="box-container">
-        <div class="box">
+    <!-- Transporte list -->
+    <section class="courses stage" id="transportSection" data-step="transport" style="display:none;">
+      <div class="box-container" id="transportContainer">
+        <div class="box transport-item" data-title="Transfer de chegada" data-type="Transporte" data-price="150" data-original="220">
           <div class="image shine">
-            <img src="images/transporte1" alt="" />
+            <img src="images/transporte1.png" alt="Transfer" />
           </div>
           <div class="content">
             <a class="btn" onclick="openPopup('popup1')">Saiba mais</a>
-                        <a class="btn btn-quero">Quero esse</a>
+            <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
             <h3>Transfer de chegada</h3>
-            <p>Praticidade e comforto</p>
-            <h5><span class="old-price">R$220,00</span>
-      <span class="new-price">R$150,00</span>
-      <span class="discount">-10%</span></h5>
-            <br />
+            <p>Praticidade e conforto</p>
+            <div class="price">
+              <span class="old-price">R$220,00</span>
+              <span class="new-price">R$150,00</span>
+              <span class="discount">-32%</span>
+            </div>
             <h5>Sobre:</h5>
-            <p>
-              Motorista particular busca você no aeroporto
-            </p>
+            <p>Motorista particular busca você no aeroporto</p>
             <div class="icons">
               <p>
                 <i class="fa-solid fa-star"></i>
@@ -510,133 +508,37 @@
             </div>
           </div>
         </div>
-        
       </div>
 
-      
-<!-- Botão "Carregar mais" -->
-  <div class="load-more">
-    
-    
-    <br/><br/>
-          <a class="btn btn-sem-acomodacao" onclick="addAcomodacao('Sem acomodação')">
-  Prosseguir sem transporte
-</a>
-  </div>
-
-
+      <div class="load-more">
+        <button id="loadMoreTransport"><i class="fas fa-plus"></i></button>
+        <br /><br />
+        <a class="btn btn-sem-acomodacao" id="skipTransportBtn">Prosseguir sem transporte</a>
+      </div>
     </section>
 
+    <!-- Lead Form starts here -->
+    <section class="form-section stage" id="leadSection" style="display:none;">
+      <h2>Seus dados</h2>
+      <p>Preencha seus dados para prosseguir para seu orçamento.</p>
 
-    <!-- Trasporte ends here -->
-
-    <!-- Pop Up Transporte starts here -->
-
-    <div class="popup" id="popup7">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup1')">&times;</span>
-        <h2>Ilha de Malta</h2>
-        <div class="icons">
-          <span><i class="far fa-bookmark"></i> Monte seu pacote</span>
-          <span><i class="far fa-clock"></i> 4-12 horas mensais</span>
-        </div>
-        <p>
-          Este curso oferece flexibilidade total. Ideal para quem tem agenda
-          variada e quer montar um plano personalizado.
-        </p>
-        <div class="details">
-          <span
-            ><i class="far fa-dollar-sign"></i> Pague R$130,00 por hora</span
-          >
-        </div>
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
-    </div>
-
-    <div class="popup" id="popup2">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup2')">&times;</span>
-        <h2>Pacote Starter</h2>
-        <div class="icons">
-          <span><i class="far fa-bookmark"></i> 43 horas totais</span>
-          <span><i class="far fa-clock"></i> 1 hora por semana</span>
-        </div>
-        <p>
-          Plano pensado para quem busca manter o contato constante com o inglês
-          sem comprometer o orçamento. Com uma carga horária leve e a inclusão
-          de períodos de férias, é a opção ideal para quem quer aprender de
-          forma gradual, com flexibilidade e regularidade.
-        </p>
-        <div class="details">
-          <span
-            ><i class="far fa-snowflake"></i> 2 semanas de férias de
-            inverno</span
-          >
-          <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
-          <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
-          <span><i class="far fa-dollar-sign"></i> Pague em 12x R$340,00</span>
+      <form id="leadForm">
+        <div class="form-group">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
         </div>
 
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
-    </div>
-
-    <div class="popup" id="popup3">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup('popup3')">&times;</span>
-        <h2>Pacote Regular</h2>
-        <div class="icons">
-          <span><i class="far fa-bookmark"></i> 86 horas totais</span>
-          <span><i class="far fa-clock"></i> 2 horas por semana</span>
-        </div>
-        <p>
-          São dois encontros semanais. Ideal para quem deseja avançar com mais
-          consistência, sem abrir mão da flexibilidade. O curso contempla pausas
-          planejadas ao longo do ano e proporciona um equilíbrio perfeito entre
-          ritmo de aprendizado e investimento acessível.
-        </p>
-        <div class="details">
-          <span
-            ><i class="far fa-snowflake"></i> 2 semanas de férias de
-            inverno</span
-          >
-          <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
-          <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
-          <span><i class="far fa-dollar-sign"></i> Pague em 12x R$609,00</span>
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 90000-0000" required />
         </div>
 
-        <a href="#" class="btn">Experimente grátis</a>
-      </div>
-    </div>
+        <button type="submit" class="btn-form">Revisar meu intercâmbio</button>
+      </form>
+    </section>
+    <!-- Lead Form ends here -->
 
-    <!-- Pop Up Transporte ends here -->
-
-<!-- Lead Form starts here -->
-
-<section class="form-section" id="contato">
-  <h2>Seus dados</h2>
-  <p>Preencha seus dados para prosseguir para seu orçamento.</p>
-
-  <form id="leadForm">
-    <div class="form-group">
-      <label for="nome">Nome completo</label>
-      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-    </div>
-
-    <div class="form-group">
-      <label for="whatsapp">WhatsApp</label>
-      <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 90000-0000" required>
-    </div>
-
-    <button type="submit" class="btn-form">Revisar meu intercâmbio</button>
-  </form>
-</section>
-
-
-<!-- Lead Form ends here -->
-
-
-
+    <!-- Footer -->
     <section class="footer">
       <div class="box-container">
         <div class="box">
@@ -644,23 +546,17 @@
           <p>contato@linguawiser.com</p>
           <div class="share">
             <a href="#" class="fab fa-youtube"></a>
-            <a
-              href="https://www.instagram.com/lingua.wiser"
-              class="fab fa-instagram"
-            ></a>
+            <a href="https://www.instagram.com/lingua.wiser" class="fab fa-instagram"></a>
           </div>
         </div>
       </div>
-      <div class="credit">
-        criado por bpd digital | Todos os direitos reservados
-      </div>
+      <div class="credit">criado por bpd digital | Todos os direitos reservados</div>
     </section>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- JS Link -->
-
     <script src="js/script.js"></script>
   </body>
 </html>

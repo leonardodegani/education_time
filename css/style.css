@@ -83,6 +83,71 @@ section {
     background-color: var(--main-color1);
   }
   
+
+/* ====== BOTÃO "CARREGAR MAIS" ====== */
+.load-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#loadMoreCourses,
+#loadMoreAccommodation,
+#loadMoreTransport {
+  background: linear-gradient(135deg, #004aad, #0078d7);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 74, 173, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loadMoreCourses i,
+#loadMoreAccommodation i,
+#loadMoreTransport i {
+  transition: transform 0.3s ease;
+}
+
+/* Efeito hover: botão "sobe" e brilha */
+#loadMoreCourses:hover,
+#loadMoreAccommodation:hover,
+#loadMoreTransport:hover {
+  background: linear-gradient(135deg, #0078d7, #00a8ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 120, 215, 0.4);
+}
+
+/* Ícone gira levemente no hover */
+#loadMoreCourses:hover i,
+#loadMoreAccommodation:hover i,
+#loadMoreTransport:hover i {
+  transform: rotate(90deg);
+}
+
+/* Quando o botão for desativado */
+#loadMoreCourses:disabled,
+#loadMoreAccommodation:disabled,
+#loadMoreTransport:disabled {
+  background: #ccc;
+  color: #777;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
 .shine::after {
     content: "";
     position: absolute;
@@ -657,6 +722,19 @@ p i.fa-star-half-stroke {
   background: var(--green);
 }
 
+.extra-course {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.extra-course.added {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.extra-course {
+  display: none;
+}
 
 
 
@@ -758,6 +836,69 @@ p i.fa-star-half-stroke {
     margin-top: 2.5rem;
     margin-bottom: 1rem;
   }
+  /* Garante que o iframe do mapa se ajuste ao contêiner */
+.popup-content .map-container iframe {
+    /* Define o display block para melhor controle */
+    display: block; 
+    /* Remove a margem padrão de alguns navegadores */
+    margin: 0; 
+}
+
+/* --- Estilos para a seção de DESTAQUES da Escola (h3, ul, li) --- */
+
+/* Título de Destaques (h3) */
+.popup-content h3 {
+    margin-top: 2.5rem; /* Mais espaçamento superior para separar do texto anterior */
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem; /* Tamanho entre h2 (1.8rem) e p (1.4rem) */
+    color: var(--black); /* Usando a variável de cor principal escura */
+    text-transform: initial; /* Mantém a capitalização normal */
+    text-align: center;
+    padding-bottom: 0.5rem;
+    /* Linha sutil para separar, mantendo o estilo do seu border-top em .icons */
+    border-bottom: 0.1rem solid var(--main-color1); 
+}
+
+/* Lista de Destaques (ul) */
+.popup-content ul {
+    list-style: none; /* Remove os bullets padrão */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Alinha o texto da lista à esquerda */
+}
+
+/* Item da Lista (li) */
+.popup-content ul li {
+    font-size: 1.4rem; /* Mantém o mesmo tamanho de fonte do seu <p> */
+    color: var(--black);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 3rem; /* Espaço para posicionar o ícone personalizado */
+    position: relative;
+    text-transform: none;
+}
+
+/* Pseudo-elemento para criar o Ícone Personalizado (o "bullet point") */
+.popup-content ul li::before {
+    /* Usei o código Unicode para um avião (✈) ou você pode usar uma estrela (★) */
+    content: "✈"; 
+    /* content: "★"; */ 
+    
+    color: var(--main-color1); /* Usa sua cor de destaque principal */
+    font-size: 1.8rem; /* Ícone um pouco maior que o texto */
+    font-weight: bold;
+    display: inline-block;
+    width: 2.5rem; /* Largura fixa para alinhamento uniforme */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Estilo para a ênfase (o 'strong') dentro da lista */
+.popup-content ul li strong {
+    color: var(--main-color1); /* Dá um toque da cor de destaque à palavra-chave */
+    font-weight: 700;
+}
 
   /* Animação de entrada */
 
@@ -1018,6 +1159,7 @@ input {
 
 
 
+
 /* Lead Formas ends here */
 
 
@@ -1253,3 +1395,62 @@ input {
         }
 
     }
+
+    /* --- Início: adições para carrinho, etapas e badges --- */
+
+/* cart icon */
+.cart-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--black);
+  font-size: 2.2rem;
+  margin-left: .8rem;
+  text-decoration: none;
+}
+.cart-link .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #ff3b3b;
+  color: white;
+  font-size: 1.1rem;
+  padding: 3px 6px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* Stage sections (hidden by default via inline style) - nice scroll alignment */
+.stage { scroll-margin-top: 8.5rem; }
+
+/* smaller btn for skip */
+.btn-sem-acomodacao {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #f44336;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 22px;
+  cursor: pointer;
+}
+
+/* subtle animation for new items loaded */
+.box-container .box.added {
+  animation: fadeInUp 400ms ease forwards;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* modal cart (on cart.html we style further) */
+
+/* ensure whatsapp and cart are above everything */
+.whatsapp-button, .cart-link { z-index: 1100; }
+
+/* small responsive tweaks */
+@media (max-width: 768px) {
+  .cart-link { font-size: 2rem; }
+  .cart-link .cart-count { top: -6px; right: -8px; font-size: 1rem; padding: 2px 5px; }
+}

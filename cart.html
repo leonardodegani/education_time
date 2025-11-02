@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Revisar meu intercâmbio — LinguaWiser</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* estilos específicos para a página do carrinho (pequenos ajustes) */
+    .cart-page { padding: 6rem 7%; min-height: 80vh; }
+    .cart-list { display: grid; gap: 1rem; max-width: 900px; margin: 2rem auto; }
+    .cart-item { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem; border: .1rem solid #ddd; background:#fff; border-radius:8px; }
+    .cart-item h4 { margin:0; font-size:1.6rem; color:#222; }
+    .cart-item .price { font-weight:700; color:#0d265d; }
+    .cart-actions { display:flex; gap:1rem; justify-content:center; margin-top:2rem; }
+    .remove-btn { background:#ff3b3b; color:#fff; padding:8px 12px; border-radius:6px; cursor:pointer; }
+    .final-btn { background:#007bff; color:#fff; padding:12px 18px; border-radius:8px; cursor:pointer; font-weight:700; }
+    .lead-info { max-width: 900px; margin: 0 auto; text-align:left; padding:1rem; background:#f9f9f9; border-radius:8px; border: .1rem solid #e5e5e5; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img src="images/logo.png" alt="LinguaWiser Logo" class="logo" />
+    <nav class="navbar"><a href="app.html">Voltar</a></nav>
+    <div class="icons">
+      <a href="app.html" class="cart-link"><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <h1 class="heading">Revisar meu intercâmbio</h1>
+
+    <div id="leadBox" class="lead-info" style="display:none;">
+      <h3>Dados do lead</h3>
+      <p id="leadName"></p>
+      <p id="leadWhatsapp"></p>
+    </div>
+
+    <div id="cartList" class="cart-list"></div>
+
+    <div style="text-align:center" id="emptyMsg">Seu carrinho está vazio. Volte à página inicial para montar seu intercâmbio.</div>
+
+    <div class="cart-actions" id="cartActions" style="display:none;">
+      <button class="final-btn" id="finalizeBtn">Finalizar e enviar para WhatsApp</button>
+      <button class="remove-all-btn" id="clearBtn" style="background:#999;color:#fff;padding:8px 12px;border-radius:6px;">Limpar tudo</button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'lw_cart_v1';
+    function getCart(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) { return []; } }
+    function saveCart(cart){ localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); renderCart(); }
+    function formatCurrency(num){ return 'R$' + Number(num).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+    function renderCart(){
+      const list = document.getElementById('cartList');
+      const empty = document.getElementById('emptyMsg');
+      const actions = document.getElementById('cartActions');
+      const cart = getCart();
+      list.innerHTML = '';
+      if (!cart.length) {
+        empty.style.display = '';
+        actions.style.display = 'none';
+        document.getElementById('leadBox').style.display = 'none';
+        return;
+      }
+      empty.style.display = 'none';
+      actions.style.display = '';
+      cart.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = \`
+          <div>
+            <h4>\${item.type} — \${item.title}</h4>
+            <div style="color:#666;font-size:1.3rem">Original: \${formatCurrency(item.original)} • Preço: <span class="price">\${formatCurrency(item.price)}</span></div>
+          </div>
+          <div>
+            <button class="remove-btn" data-idx="\${idx}">Remover</button>
+          </div>
+        \`;
+        list.appendChild(div);
+      });
+
+      // attach remove handlers
+      document.querySelectorAll('.remove-btn').forEach(btn => {
+        btn.addEventListener('click', function(){
+          const idx = Number(this.getAttribute('data-idx'));
+          const cart = getCart();
+          cart.splice(idx,1);
+          saveCart(cart);
+        });
+      });
+
+      // show lead info if exists
+      const lead = JSON.parse(localStorage.getItem('lw_lead') || 'null');
+      if (lead) {
+        document.getElementById('leadBox').style.display = '';
+        document.getElementById('leadName').textContent = 'Nome: ' + (lead.nome || '');
+        document.getElementById('leadWhatsapp').textContent = 'WhatsApp: ' + (lead.whatsapp || '');
+      }
+    }
+
+    document.getElementById('clearBtn').addEventListener('click', function(){
+      if(confirm('Remover todos os itens do carrinho?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderCart();
+      }
+    });
+
+    document.getElementById('finalizeBtn').addEventListener('click', function(){
+      const cart = getCart();
+      if (!cart.length) return alert('Carrinho vazio.');
+      const lead = JSON.parse(localStorage.getItem('lw_lead') || 'null');
+      if (!lead || !lead.whatsapp) {
+        if (!confirm('Você não preencheu seus dados. Deseja continuar mesmo assim?')) return;
+      }
+
+      // monta mensagem
+      let message = 'Olá!%0A%0AGostaria de solicitar uma consultoria personalizada para meu intercâmbio em Malta.%0A%0AMinhas escolhas:%0A';
+      cart.forEach((it, i) => {
+        message += (i+1) + '. ' + it.type + ' - ' + it.title + ' (' + formatCurrency(it.price) + ')%0A';
+      });
+      if (lead && lead.nome) message += '%0ANome: ' + encodeURIComponent(lead.nome);
+      if (lead && lead.whatsapp) message += '%0AWhatsApp de contato: ' + encodeURIComponent(lead.whatsapp);
+
+      // seu número (formato internacional sem +)
+      const numero = '5541992188670'; // altere para seu número
+      const url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(decodeURIComponent(message));
+      window.open(url, '_blank');
+
+      // opcional: limpar carrinho após enviar
+      // localStorage.removeItem(STORAGE_KEY);
+      // localStorage.removeItem('lw_lead');
+    });
+
+    // init
+    renderCart();
+  </script>
+</body>
+</html>

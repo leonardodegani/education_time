@@ -555,6 +555,14 @@ p i.fa-star-half-stroke {
   font-size: 13px;
 }
 
+/* ==== Scroll suave até o título das seções ==== */
+h1.heading, 
+h2.heading, 
+.section-title {
+  scroll-margin-top: 150px; /* espaço abaixo do header fixo */
+}
+
+
 
 /* Services ends here */
 

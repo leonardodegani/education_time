@@ -105,16 +105,25 @@ function goToNextStage(currentBoxOrElement) {
 
 /* mostra a stage (e rola até o título/introduction se houver) */
 function showStage(name) {
+  // mapeamento das sections principais
   const map = {
     courses: 'coursesSection',
     accommodation: 'accommodationSection',
     transport: 'transportSection',
     lead: 'leadSection'
   };
+
+  // mapeamento das intros (onde o <h1> geralmente está)
+  const introMap = {
+    courses: 'servicesIntro',         // importante: o título "Cursos" está no servicesIntro
+    accommodation: 'accommodationIntro',
+    transport: 'transportIntro'
+  };
+
   const id = map[name];
   if (!id) return;
 
-  const introMap = { accommodation: 'accommodationIntro', transport: 'transportIntro' };
+  // mostrar intro (se existir)
   const introId = introMap[name];
   let introEl = null;
   if (introId) {
@@ -122,24 +131,32 @@ function showStage(name) {
     if (introEl) introEl.style.display = '';
   }
 
+  // mostrar a section alvo
   const el = document.getElementById(id);
-  if (el) {
-    el.style.display = '';
+  if (el) el.style.display = '';
 
-    setTimeout(() => {
-      const searchRoot = introEl || el;
-      const title = searchRoot.querySelector('h1, h2, .section-title');
-      if (title) {
-        const yOffset = -90; // ajuste aqui para espaçamento do topo (altere conforme quiser)
-        const y = title.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      } else {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 300);
-  }
+  // cálculo do header dinamicamente
+  const header = document.querySelector('.header');
+  const headerH = header ? header.offsetHeight : 90;
+
+  // espera curta para que o DOM repinte (principalmente quando a section estava display:none)
+  setTimeout(() => {
+    // procura o título dentro do intro (se existir) ou dentro da própria section
+    const root = introEl || el;
+    if (!root) return;
+
+    const title = root.querySelector('h1, h2, .heading, .section-title');
+    if (title) {
+      // posição do título na página
+      const y = title.getBoundingClientRect().top + window.pageYOffset - headerH - 12; // 12px de folga extra
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    } else {
+      // fallback: rolar ao topo da section com o mesmo offset
+      const y = el.getBoundingClientRect().top + window.pageYOffset - headerH - 12;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }, 150);
 }
-
 /* ========== "Prosseguir sem..." e Lead form ========== */
 document.addEventListener('DOMContentLoaded', function () {
   // Prosseguir sem acomodação
@@ -175,19 +192,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // "Comece aqui" botão — esconde seções posteriores e rola para cursos
-  const startBtn = document.getElementById('startBtn');
-  if (startBtn) {
-    startBtn.addEventListener('click', function (e) {
-      ['accommodationSection', 'transportSection', 'leadSection', 'accommodationIntro', 'transportIntro'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = 'none';
-      });
-      setTimeout(() => {
-        document.getElementById('coursesSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
+  /* startBtn: usar showStage para rolar até 'courses' (substitua handler antigo se houver) */
+const startBtn = document.getElementById('startBtn');
+if (startBtn) {
+  startBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    // esconder seções seguintes (mantém seu fluxo)
+    ['accommodationSection', 'transportSection', 'leadSection', 'accommodationIntro', 'transportIntro'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
     });
-  }
+    // mostra e rola até o título de Cursos (servicesIntro)
+    showStage('courses');
+  });
+}
 
   // ativar load more e atualizar contador
   initLoadMore();
@@ -426,3 +444,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+

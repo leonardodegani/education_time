@@ -18,7 +18,7 @@
   <body>
     <!-- WhatsApp Btn -->
     <a
-      href="https://wa.me/5541992188670?text=Hello!%20Tenho%20interesse%20nas%20aulas%20de%20ingl%C3%AAs%20da%20LinguaWiser...%20"
+      href="https://wa.me/5541992188670?text=Desejo%20mais%20informa%C3%A7%C3%B5es%20sobre%20interc%C3%A2mbio%20para%20Malta...%20vim%20pelo%20aplicativo!"
       class="whatsapp-button"
       target="_blank"
       aria-label="Chame no WhatsApp"
@@ -233,6 +233,20 @@
         <span class="close" onclick="closePopup('popup1')">×</span>
         
         <h2>Sprachcaffe - Club Village Malta 🏝️</h2>
+
+        <!-- Galeria de Imagens -->
+<div class="popup-gallery">
+  <button class="gallery-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+
+  <div class="gallery-images">
+    <img src="images/escola-spra1.png" class="active" alt="Imagem 1 da escola">
+    <img src="images/escola-spra2.png" alt="Imagem 2 da escola">
+    <img src="images/escola-spra3.png" alt="Imagem 3 da escola">
+  </div>
+
+  <button class="gallery-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+</div>
+
         
         <div class="icons">
             <span><i class="fas fa-map-marker-alt"></i> St. Julian´s, Malta</span>
@@ -279,6 +293,19 @@
         <span class="close" onclick="closePopup('popup2')">×</span>
         
         <h2>Sprachcaffe - Club Village Malta 🏝️</h2>
+
+        <!-- Galeria de Imagens -->
+<div class="popup-gallery">
+  <button class="gallery-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+
+  <div class="gallery-images">
+    <img src="images/escola-spra1.png" class="active" alt="Imagem 1 da escola">
+    <img src="images/escola-spra2.png" alt="Imagem 2 da escola">
+    <img src="images/escola-spra3.png" alt="Imagem 3 da escola">
+  </div>
+
+  <button class="gallery-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+</div>
         
         <div class="icons">
             <span><i class="fas fa-map-marker-alt"></i> St. Julian´s, Malta</span>
@@ -326,6 +353,19 @@
         
         <h2>Sprachcaffe - Club Village Malta 🏝️</h2>
         
+        <!-- Galeria de Imagens -->
+<div class="popup-gallery">
+  <button class="gallery-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+
+  <div class="gallery-images">
+    <img src="images/escola-spra1.png" class="active" alt="Imagem 1 da escola">
+    <img src="images/escola-spra2.png" alt="Imagem 2 da escola">
+    <img src="images/escola-spra3.png" alt="Imagem 3 da escola">
+  </div>
+
+  <button class="gallery-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+</div>
+
         <div class="icons">
             <span><i class="fas fa-map-marker-alt"></i> St. Julian´s, Malta</span>
             <span><i class="far fa-clock"></i> Duração Flexível</span> 
@@ -449,7 +489,37 @@
             </div>
           </div>
         </div>
+     
+     <!-- Acomodação extras (inicialmente ocultos) -->
+
+ <!-- Acomodação 4 -->
+
+     <div class="box accom-item extra-accom" data-title="Studio - Duplo" data-type="Acomodação" data-price="3800" data-original="4200">
+          <div class="image shine">
+            <img src="images/acomodacao-studio-duplo.jpg" alt="Studio" />
+          </div>
+          <div class="content">
+            <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
+            <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+            <h3>Studio - Duplo</h3>
+            <p><i class="fa-solid fa-bed"></i> Studio duplo</p>
+            <div class="price">
+              <span class="old-price">R$4.200,00</span>
+              <span class="new-price">R$3.800,00</span>
+              <span class="discount">-9%</span>
+            </div>
+            <p>Valor por semana</p>
+            <div class="icons">
+              <span><i class="far fa-calendar"></i> 02 de Novembro a 05 de abril</span>
+              <span><i class="fas fa-home"></i> Studio</span>
+            </div>
+          </div>
+        </div>
+     
       </div>
+
+
+ 
 
       <div class="load-more">
         <button id="loadMoreAccommodation"><i class="fas fa-plus"></i></button>
@@ -501,8 +571,75 @@
             </div>
           </div>
         </div>
+
+        <div class="box transport-item" data-title="Transfer de chegada" data-type="Transporte" data-price="150" data-original="220">
+          <div class="image shine">
+            <img src="images/transporte1.png" alt="Transfer" />
+          </div>
+          <div class="content">
+            <a class="btn" onclick="openPopup('popup1')">Saiba mais</a>
+            <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+            <h3>Transfer de chegada</h3>
+            <p>Praticidade e conforto</p>
+            <div class="price">
+              <span class="old-price">R$220,00</span>
+              <span class="new-price">R$150,00</span>
+              <span class="discount">-32%</span>
+            </div>
+            <h5>Sobre:</h5>
+            <p>Motorista particular busca você no aeroporto</p>
+            <div class="icons">
+              <p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <span><i class="fa-solid fa-tags"></i> Descontos exclusivos</span>
+            </div>
+          </div>
+        </div>
+
+
+     <!-- Transporte extras (inicialmente ocultos) -->
+
+ <!-- Transporte 3 -->
+
+
+
+<div class="box transport-item extra-trans" data-title="Transfer de chegada" data-type="Transporte" data-price="150" data-original="220">
+          <div class="image shine">
+            <img src="images/transporte1.png" alt="Transfer" />
+          </div>
+          <div class="content">
+            <a class="btn" onclick="openPopup('popup1')">Saiba mais</a>
+            <a class="btn btn-quero" onclick="selectItemFromElement(this)">Quero esse</a>
+            <h3>Transfer de chegada</h3>
+            <p>Praticidade e conforto</p>
+            <div class="price">
+              <span class="old-price">R$220,00</span>
+              <span class="new-price">R$150,00</span>
+              <span class="discount">-32%</span>
+            </div>
+            <h5>Sobre:</h5>
+            <p>Motorista particular busca você no aeroporto</p>
+            <div class="icons">
+              <p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <span><i class="fa-solid fa-tags"></i> Descontos exclusivos</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
+      
       <div class="load-more">
         <button id="loadMoreTransport"><i class="fas fa-plus"></i></button>
         <br /><br />

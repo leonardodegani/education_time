@@ -36,6 +36,19 @@ function closePopup(id) {
   if (el) el.style.display = 'none';
 }
 
+/* ==== Galeria de Imagens dentro dos Popups ==== */
+function changeImage(button, direction) {
+  const gallery = button.closest('.popup-gallery');
+  const images = gallery.querySelectorAll('img');
+  let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+
+  images[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + direction + images.length) % images.length;
+  images[currentIndex].classList.add('active');
+}
+
+
+
 /* ========== CARRINHO (localStorage) ========== */
 const STORAGE_KEY = 'lw_cart_v1';
 
@@ -79,7 +92,7 @@ function selectItemFromElement(btnEl) {
   addToCart(item);
 
   // feedback curto
-  btnEl.textContent = 'Adicionado ✓';
+  btnEl.textContent = 'Adicionado';
   btnEl.disabled = true;
   btnEl.style.opacity = '0.85';
 
@@ -404,9 +417,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const whatsapp = leadData.whatsapp || "";
       
       // NOVO CONTEÚDO DA MENSAGEM (Com Emojis, Negrito e Quebras de Linha)
-      let message = `*INTERCÂMBIO EM MALTA*\n\n`;
+      let message = `*Quero ir para Malta!*\n\n`;
 
-      message += `_DADOS DO CLIENTE:_\n`;
       message += `*Nome:* ${nome}\n`;
       message += `*WhatsApp:* ${whatsapp}\n\n`;
 
@@ -418,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       
       message += `\n*TOTAL DO ORÇAMENTO:* *${formatCurrency(total)}*\n`;
-      message += `\nOlá! Gostaria de mais informações para o meu intercâmbio...`;
+      message += `\nOlá! Gostaria de mais informações sobre intercâmbio para Malta...`;
       // FIM DO NOVO CONTEÚDO
 
       const encoded = encodeURIComponent(message);

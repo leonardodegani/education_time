@@ -783,7 +783,7 @@ h2.heading,
     margin-bottom: 1rem;
     font-size: 1.8rem;
     color: #333;
-    text-transform: uppercase;
+    text-transform: none;
   }
   
   .popup-content p {
@@ -946,7 +946,7 @@ h2.heading,
 /* Pseudo-elemento para criar o Ícone Personalizado (o "bullet point") */
 .popup-content ul li::before {
     /* Usei o código Unicode para um avião (✈) ou você pode usar uma estrela (★) */
-    content: "✈"; 
+    content: "\2192"; 
     /* content: "★"; */ 
     
     color: var(--main-color1); /* Usa sua cor de destaque principal */

@@ -91,6 +91,16 @@ function selectItemFromElement(btnEl) {
   const item = createItemObjectFromBox(box);
   addToCart(item);
 
+  // salva a escola escolhida (se for curso)
+const stage = box.closest('.stage');
+if (stage && stage.getAttribute('data-step') === 'courses') {
+  const school = box.getAttribute('data-school');
+  if (school) {
+    localStorage.setItem('lw_selected_school', school);
+  }
+}
+
+
   // feedback curto
   btnEl.textContent = 'Adicionado';
   btnEl.disabled = true;
@@ -148,6 +158,17 @@ function showStage(name) {
   const el = document.getElementById(id);
   if (el) el.style.display = '';
 
+// filtrar acomodações e transportes pela escola escolhida
+if (name === 'accommodation') {
+  filterBySelectedSchool('accommodationSection');
+}
+
+if (name === 'transport') {
+  filterBySelectedSchool('transportSection');
+}
+
+
+  
   // cálculo do header dinamicamente
   const header = document.querySelector('.header');
   const headerH = header ? header.offsetHeight : 90;
@@ -220,6 +241,16 @@ if (startBtn) {
   });
 }
 
+
+function canShowBoxBySchool(box) {
+  const selectedSchool = localStorage.getItem('lw_selected_school');
+  if (!selectedSchool) return true;
+
+  const boxSchool = box.getAttribute('data-school');
+  return boxSchool === selectedSchool;
+}
+
+
   // ativar load more e atualizar contador
   initLoadMore();
   updateCartCount();
@@ -253,7 +284,13 @@ function initLoadMore() {
   if (loadMoreAccommodationBtn && extraAccom.length > 0) {
     loadMoreAccommodationBtn.addEventListener('click', function () {
       const toShow = extraAccom.slice(accomIndex, accomIndex + 2);
-      toShow.forEach(el => { el.style.display = 'block'; setTimeout(() => el.classList.add('added'), 20); });
+      toShow.forEach(el => {
+  if (!canShowBoxBySchool(el)) return;
+
+  el.style.display = 'block';
+  setTimeout(() => el.classList.add('added'), 20);
+});
+
       accomIndex += toShow.length;
       if (toShow.length === 0 || accomIndex >= extraAccom.length) loadMoreAccommodationBtn.style.display = 'none';
     });
@@ -267,12 +304,40 @@ function initLoadMore() {
   if (loadMoreTransportBtn && extraTransport.length > 0) {
     loadMoreTransportBtn.addEventListener('click', function () {
       const toShow = extraTransport.slice(transportIndex, transportIndex + 2);
-      toShow.forEach(el => { el.style.display = 'block'; setTimeout(() => el.classList.add('added'), 20); });
+      toShow.forEach(el => {
+  if (!canShowBoxBySchool(el)) return;
+
+  el.style.display = 'block';
+  setTimeout(() => el.classList.add('added'), 20);
+});
+
       transportIndex += toShow.length;
       if (toShow.length === 0 || transportIndex >= extraTransport.length) loadMoreTransportBtn.style.display = 'none';
     });
   } else if (loadMoreTransportBtn) loadMoreTransportBtn.style.display = 'none';
 }
+
+/* === helper GLOBAL (necessário para showStage) === */
+function filterBySelectedSchool(sectionId) {
+  const selectedSchool = localStorage.getItem('lw_selected_school');
+  if (!selectedSchool) return;
+
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+
+  const items = section.querySelectorAll('.box');
+
+  items.forEach(box => {
+    const school = box.getAttribute('data-school');
+    if (!school || school !== selectedSchool) {
+      box.style.display = 'none';
+    } else {
+      box.style.display = '';
+    }
+  });
+}
+
+
 
 /* ================= helper para criar HTML dinâmico (se necessário) ============== */
 function formatCurrency(num) {

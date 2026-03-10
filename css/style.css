@@ -142,7 +142,19 @@ section {
 
 
 
+.imagens-lado-a-lado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1000px;
+}
 
+.imagens-lado-a-lado img{
+    width: 45%;
+    border-radius: 10px;
+}
 
 
 

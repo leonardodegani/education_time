@@ -197,7 +197,7 @@ section {
   }
   
 .header .navbar a {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     color: var(--black);
     margin: 0 1rem;
 }
@@ -625,6 +625,7 @@ h2.heading,
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
+    
 }
 
 .courses .box-container .box .image {

@@ -11,7 +11,7 @@
     --light-blue: #c6ddf1;
     --black: #444;
     --white: #fff;
-    --green: green;
+    --btn-hover: #0b5c72;
     --border: .1rem solid var(--main-color1);
     --box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 1);
 }
@@ -84,7 +84,7 @@ section {
 }
 
 .btn:hover {
-    background-color: var(--green);
+    background-color: var(--btn-hover);
 }
 
 .shine {

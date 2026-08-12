@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinguaWiser | Learn English</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a href="https://wa.me/5541992188670?text=Hello!%20Quero%20aprender%20ingl%C3%AAs..." class="whatsapp-button" target="_blank" aria-label="Chame no WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+  </a>
+
+  <header class="header">
+    <img src="images/logo.png" alt="LinguaWiser Logo" class="logo" />
+    
+    <div class="icons">
+      <details class="language-dropdown">
+        <summary class="language-button">PT <i class="fas fa-chevron-down"></i></summary>
+        <div class="dropdown-content">
+          <a href="?lang=pt">Português</a>
+          <a href="?lang=en">English</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <section class="home" id="home">
+    <div class="content">
+      <h2>Soluções inteligentes para</h2>
+      <h3>Aprender Inglês!</h3>
+      <p>
+        A LinguaWiser conecta alunos, famílias e escolas a experiências em inglês mais práticas, humanas e alinhadas ao mundo real, unindo aulas personalizadas, projetos educacionais, vivências e programas que desenvolvem comunicação, confiança e repertório.
+      </p>
+      <a href="https://wa.me/5541992188670?text=Hello!%20Quero%20aprender%20ingl%C3%AAs..." class="btn">Entre em contato</a>
+    </div>
+  </section>
+
+  
+  
+<section class="services" id="services">
+    <div class="box-container">
+       <div class="box">
+        <img src="images/cursosregulares.png" alt="" />
+        <h3>Aulas personalizadas</h3>
+        <p>Acompanhamento individual ou em pequenos grupos para desenvolver comunicação, confiança e evolução consistente no inglês.</p>
+      </div>
+      <div class="box">
+        <img src="images/intercambio.png" alt="" />
+        <h3>Viagens imersivas</h3>
+        <p>Intercâmbio, vivências culturais e oportunidades para praticar o inglês em contextos reais ao redor do mundo.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="courses" id="courses">
+    <h1 class="heading">Cursos Online</h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="image shine"><img src="images/online1.png" alt="" /><h3>Online</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('popup1')">Detalhes</a>
+          <h3>Sessões avulsas</h3>
+          <p>Pague por mês</p>
+          <h5>R$130,00/hora</h5>
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> Monte seu pacote</span>
+            <span><i class="far fa-clock"></i> 4-12 horas mensais</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image shine"><img src="images/online2.png" alt="" /><h3>Online</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('popup2')">Detalhes</a>
+          <h3>Essencial</h3>
+          <p>Plano anual</p>
+          <h5>Pague em 12x R$420,00</h5>
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> 43 horas totais</span>
+            <span><i class="far fa-clock"></i> 1 hora por semana</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image shine"><img src="images/online3.png" alt="" /><h3>Online</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('popup3')">Detalhes</a>
+          <h3>Premium</h3>
+          <p>Plano anual</p>
+                    <h5>Pague em 12x R$760,00</h5>
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> 86 horas totais</span>
+            <span><i class="far fa-clock"></i> 2 horas por semana</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses">
+    <h1 class="heading">Cursos Presenciais</h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="image shine"><img src="images/presencial1.png" alt="" /><h3>Curitiba-PR</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('popup4')">Detalhes</a>
+          <h3>Sessões avulsas</h3>
+          <p>Pague por mês</p>
+          <h5>R$220,00/hora</h5>
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> Monte seu pacote</span>
+            <span><i class="far fa-clock"></i> 4-12 horas mensais</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image shine"><img src="images/presencial2.png" alt="" /><h3>Curitiba-PR</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('popup5')">Detalhes</a>
+          <h3>Essencial</h3>
+          <p>Plano anual</p>
+          <h5>Pague em 12x R$760,00</h5>
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> 43 horas totais</span>
+            <span><i class="far fa-clock"></i> 1 hora por semana</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image shine"><img src="images/presencial3.png" alt="" /><h3>Curitiba-PR</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('popup6')">Detalhes</a>
+          <h3>Premium</h3>
+          <p>Plano anual</p>
+          <h5>Pague em 12x R$1.440,00</h5>
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> 86 horas totais</span>
+            <span><i class="far fa-clock"></i> 2 horas por semana</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses">
+    <h1 class="heading">Turmas abertas</h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="image shine"><img src="images/presencial1.png" alt="" /><h3>Até 6 alunos</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('popup-turmas1')">Detalhes</a>
+          <h3>English Restart</h3><br/>          
+          <h5>12x de R$299,00 no PIX </h5>
+          <h5>12x de R$329,00 no cartão de crédito</h5><br/> 
+          <p>Para adultos que já estudaram inglês, mas ainda sentem dificuldade para formar frases e conversar. O curso reorganiza a base do idioma e desenvolve confiança para usar o inglês em situações reais.</p>                    
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> Nível Básico</span>
+            <span><i class="far fa-clock"></i> Quintas as 11:00</span>
+                      </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image shine"><img src="images/presencial1.png" alt="" /><h3>Até 6 alunos</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('opup-turmas2')">Detalhes</a>
+          <h3>Real Life English</h3>          
+          <h5>12x de R$219,00</h5>
+          <p>Conversação prática para viagens, trabalho, restaurantes, eventos e situações cotidianas.</p>
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> Nível Intermediário</span>
+            <span><i class="far fa-clock"></i> Quintas as 11:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image shine"><img src="images/presencial1.png" alt="" /><h3>Até 6 alunos</h3></div>
+        <div class="content">
+          <a class="btn" onclick="openPopup('opup-turmas3')">Detalhes</a>
+          <h3>English for Work</h3>          
+          <h5>12x de R$369,00</h5>
+          <p>Inglês para reuniões, apresentações, networking, e-mails e comunicação profissional.</p>
+          <div class="icons">
+            <span><i class="far fa-bookmark"></i> Nível Intermediário</span>
+            <span><i class="far fa-clock"></i> Quintas as 11:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <div class="popup" id="popup1">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup1')">×</span>
+      <h2>Sessões avulsas | Online</h2>
+      <div class="icons">
+        <span><i class="far fa-bookmark"></i> Monte seu pacote</span>
+        <span><i class="far fa-clock"></i> 4-12 horas mensais</span>
+      </div>
+      <p>Este curso oferece flexibilidade total. Ideal para quem tem agenda variada e quer montar um plano personalizado.</p>
+      <div class="details"><span><i class="far fa-dollar-sign"></i> Pague R$130,00 por hora</span></div>
+      <a href="https://wa.me/5541992188670?text=Hello!%20Tenho%20interesse%20em%20sess%C3%B5es%20avulsas%20de%20ingl%C3%AAs%20online..." class="btn">Experimente grátis</a>
+    </div>
+  </div>
+
+  <div class="popup" id="popup2">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup2')">×</span>
+      <h2>Essencial | Online</h2>
+      <div class="icons">
+        <span><i class="far fa-bookmark"></i> 43 horas totais</span>
+        <span><i class="far fa-clock"></i> 1 hora por semana</span>
+      </div>
+      <p>Plano pensado para quem busca manter o contato constante com o inglês sem comprometer o orçamento. Com uma carga horária leve e a inclusão de períodos de férias, é a opção ideal para quem quer aprender de forma gradual, com flexibilidade e regularidade.</p>
+      <div class="details">
+        <span><i class="far fa-snowflake"></i> 2 semanas de férias de inverno</span>
+        <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
+        <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
+        <span><i class="far fa-dollar-sign"></i> Pague em 12x R$420,00</span>
+      </div>
+      <a href="https://wa.me/5541992188670?text=Hello!%20Tenho%20interesse%20no%20plano%20starter%20de%20ingl%C3%AAs%20online..." class="btn">Experimente grátis</a>
+    </div>
+  </div>
+
+  <div class="popup" id="popup3">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup3')">×</span>
+      <h2>Premium | Online</h2>
+      <div class="icons">
+        <span><i class="far fa-bookmark"></i> 86 horas totais</span>
+        <span><i class="far fa-clock"></i> 2 horas por semana</span>
+      </div>
+      <p>São dois encontros semanais. Ideal para quem deseja avançar com mais consistência, sem abrir mão da flexibilidade. O curso contempla pausas planejadas ao longo do ano e proporciona um equilíbrio perfeito entre ritmo de aprendizado e investimento acessível.</p>
+      <div class="details">
+        <span><i class="far fa-snowflake"></i> 2 semanas de férias de inverno</span>
+        <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
+        <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
+        <span><i class="far fa-dollar-sign"></i> Pague em 12x R$760,00</span>
+      </div>
+      <a href="https://wa.me/5541992188670?text=Hello!%20Tenho%20interesse%20no%20plano%20regular%20de%20ingl%C3%AAs%20online..." class="btn">Experimente grátis</a>
+    </div>
+  </div>
+
+  <div class="popup" id="popup4">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup4')">×</span>
+      <h2>Sessões avulsas | Presencial</h2>
+      <div class="icons">
+        <span><i class="far fa-bookmark"></i> Monte seu pacote</span>
+        <span><i class="far fa-clock"></i> 4-12 horas mensais</span>
+      </div>
+      <p>Este curso oferece flexibilidade total. Ideal para quem tem agenda variada e quer montar um plano personalizado.</p>
+      <div class="details"><span><i class="far fa-dollar-sign"></i> Pague R$220,00 por hora</span></div>
+      <a href="https://wa.me/5541992188670?text=Hello!%20Tenho%20interesse%20nas%20sess%C3%B5es%20avulsa%20de%20ingl%C3%AAs%20presencial..." class="btn">Experimente grátis</a>
+    </div>
+  </div>
+
+  <div class="popup" id="popup5">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup5')">×</span>
+      <h2>Essencial | Presencial</h2>
+      <div class="icons">
+        <span><i class="far fa-bookmark"></i> 43 horas totais</span>
+        <span><i class="far fa-clock"></i> 1 hora por semana</span>
+      </div>
+      <p>Plano pensado para quem busca manter o contato constante com o inglês sem comprometer o orçamento.</p>
+      <div class="details">
+        <span><i class="far fa-snowflake"></i> 2 semanas de férias de inverno</span>
+        <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
+        <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
+        <span><i class="far fa-dollar-sign"></i> Pague em 12x R$760,00</span>
+      </div>
+      <a href="https://wa.me/5541992188670?text=Hello!%20Tenho%20interesse%20no%20plano%20starter%20de%20ingl%C3%AAs%20presencial..." class="btn">Experimente grátis</a>
+    </div>
+  </div>
+
+  <div class="popup" id="popup6">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup6')">×</span>
+      <h2>Premium | Presencial</h2>
+      <div class="icons">
+        <span><i class="far fa-bookmark"></i> 86 horas totais</span>
+        <span><i class="far fa-clock"></i> 2 horas por semana</span>
+      </div>
+      <p>São dois encontros semanais. Ideal para quem deseja avançar com mais consistência, sem abrir mão da flexibilidade.</p>
+      <div class="details">
+        <span><i class="far fa-snowflake"></i> 2 semanas de férias de inverno</span>
+        <span><i class="far fa-sun"></i> 4 semanas de férias de verão</span>
+        <span><i class="far fa-star"></i> Recesso de natal e ano novo</span>
+        <span><i class="far fa-dollar-sign"></i> Pague em 12x R$1.440,00</span>
+      </div>
+      <a href="https://wa.me/5541992188670?text=Hello!%20Tenho%20interesse%20no%20plano%20regular%20de%20ingl%C3%AAs%20presencial..." class="btn">Experimente grátis</a>
+    </div>
+  </div>
+
+   <div class="popup" id="popup-turmas1">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup-turmas1')">×</span>
+      <h2>English Restart</h2>
+      <div class="icons">
+        <span><i class="far fa-bookmark"></i> Nível Básico</span>
+        <span><i class="far fa-calendar"></i> Terças e quintas</span>
+      </div>
+      <p>Para adultos que já estudaram inglês, mas ainda sentem dificuldade para formar frases e conversar. O curso reorganiza a base do idioma e desenvolve confiança para usar o inglês em situações reais.</p>
+      <div class="details">
+       <span><i class="fas fa-users"></i> Turmas de 3 a 6 alunos</span>
+       <span><i class="far fa-clock"></i> 3 horas por semana</span>
+       <span><i class="fas fa-computer"></i>Aulas online ao vivo de 1h30min</span>
+       <span><i class="fas fa-tasks"></i> Rotina de prática orientada</span>   
+       <span><i class="fas fa-snowflake"></i>Férias de inverno em julho</span>
+       <span><i class="fas fa-sun"></i>Férias de verão em dezembro e janeiro</span>
+       <a href="https://wa.me/5541992188670?text=Hello!%20Quero%20aprender%20ingl%C3%AAs..." class="btn">Matricular</a>
+       <span>12x R$299,00 no PIX Recorrente</span>
+       <span>12x R$329,00 no sem juros no cartão</span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>Entre em contato</h3>
+        <p>contato@linguawiser.com</p>
+        <div class="share">
+          <a href="https://www.instagram.com/lingua.wiser" class="fab fa-instagram"></a>
+          <a href="https://www.linkedin.com/company/linguawiser" class="fab fa-linkedin"></a>
+          <a href="https://wa.me/5541992188670?text=Hello!%20Quero%20aprender%20ingl%C3%AAs..." class="fab fa-whatsapp"></a>
+        </div>
+      </div>
+    </div>
+    <div class="credit">criado por bpd digital | Todos os direitos reservados</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

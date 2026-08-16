@@ -7,13 +7,23 @@
 :root {
     --main-color1: #11244e;
     --main-color2: #1490b1;
+    --main-color3: ;
     --light-green: #d3f4ff;
     --light-blue: #c6ddf1;
     --black: #444;
     --white: #fff;
-    --green: green;
+    --btn-hover: #0b5c72;
     --border: .1rem solid var(--main-color1);
     --box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 1);
+      --navy: #001f5c;
+  --blue: #0e265d;
+  --teal: #187798;
+  --pale: #eef7fa;
+  --ink: #15233b;
+  --muted: #667085;
+  --line: #dfe8ee;
+  --white: #ffffff;
+  --warm: #f7f4ee;
 }
 
 * {
@@ -84,7 +94,7 @@ section {
 }
 
 .btn:hover {
-    background-color: var(--green);
+    background-color: var(--btn-hover);
 }
 
 .shine {
@@ -331,6 +341,105 @@ section {
     line-height: 1.8;
     text-transform: none;
 }
+
+
+/* ========================================================================== 
+   10. Pilot Week
+   ========================================================================== */
+
+.pilot {
+  color: var(--white);
+  background: var(--navy);
+}
+
+.pilot h2 {
+  color: var(--white);
+}
+
+
+.pilot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 42px;
+}
+
+.checklist {
+  display: grid;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.check {
+  padding: 15px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.offer {
+  padding: 32px;
+  border-radius: 28px;
+  color: var(--ink);
+  background: var(--white);
+}
+
+.founding {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: #5b4b27;
+  background: #f2efe7;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.offer .tag {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: var(--teal);
+  background: var(--pale);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.price {
+  margin: 15px 0 0;
+  color: var(--navy);
+  font-size: 54px;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.price small {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.offer p {
+  color: var(--muted);
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: #79d1e4;
+  font-size: 16px;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.eyebrow--teal {
+  color: var(--teal);
+}
+
 
 /* BOXES (Services, Courses) */
 .services .box-container {
